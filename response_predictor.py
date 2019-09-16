@@ -53,7 +53,9 @@ class Predictor:
         self.col_questions_category = col_ques_category_str
         self.col_questions_category_numeric = self.col_questions_category + "_numeric"
 
-        self.model = model_factory.get_model(model_type)
+        self.model_ans = model_factory.get_model(model_type)
+        self.model_ans_cat = model_factory.get_model(model_type)
+        self.model_ques_cat = model_factory.get_model(model_type)
         self.vector = vectorizer_factory.get_vector(vector_type)
         
     def read_train_data(self):    
@@ -127,43 +129,104 @@ class Predictor:
         print("Execution of " + function_str + " function took " + str(end_time - start_time) + " seconds")
 
     
-    def fit_train_test(self, data, col_questions, col_target_numeric, target_dictionary):
+    def fit_train_test(self, data):
         print('--------------------------------------------------------------------------------')
         
-        X_train, y_train, X_test, y_test = self.vectorize_train_test(data, col_questions, col_target_numeric)
+        print('train for answers')
+        #answers
+        X_train_ans, y_train_ans, X_test_ans, y_test_ans = self.vectorize_train_test(data, self.col_questions, self.col_answers_numeric)
         start_time = self.get_start_time()
-        self.model.fit(X_train, y_train)
+        self.model_ans.fit(X_train_ans, y_train_ans)
+
+        '''
+        print('train for answers categories')
+        #answers categories
+        X_train_ans_cat, y_train_ans_cat, X_test_ans_cat, y_test_ans_cat = self.vectorize_train_test(data, self.col_questions, self.col_answers_category_numeric)
+        start_time = self.get_start_time()
+        self.model_ans_cat.fit(X_train_ans_cat, y_train_ans_cat)
+
+        print('train for question categories')
+        #question categories
+        X_train_ques_cat, y_train_ques_cat, X_test_ques_cat, y_test_ques_cat = self.vectorize_train_test(data, self.col_questions, self.col_questions_category_numeric)
+        start_time = self.get_start_time()
+        self.model_ques_cat.fit(X_train_ques_cat, y_train_ques_cat)
+        '''
+
         self.print_execution_time(start_time, "fit on train")
           
         start_time = self.get_start_time()
-        y_pred_train = self.model.predict(X_train)
+        y_pred_train_ans = self.model_ans.predict(X_train_ans)
         self.print_execution_time(start_time, "predict on train")
         
         # Printing model
-        print(self.model)
+        print(self.model_ans)
         # Printing train scores
         start_time = self.get_start_time()
-        self.get_score(y_pred_train, y_train)
+        self.get_score(y_pred_train_ans, y_train_ans)
         self.print_execution_time(start_time, "get_score on train")
         
         start_time = self.get_start_time()
-        y_pred_test = self.model.predict(X_test)
+        y_pred_test_ans = self.model_ans.predict(X_test_ans)
         self.print_execution_time(start_time, "predict on test")
         
         # Printing test scores
         print("Test score")
         start_time = self.get_start_time()
-        self.get_score(y_pred_test, y_test)
+        self.get_score(y_pred_test_ans, y_test_ans)
         self.print_execution_time(start_time, "get_score on test")
         
         # Average R2 score and standart deviation of 5-fold cross-validation
         start_time = self.get_start_time()
-        scores = cross_val_score(self.model, X_test, y_test, cv=5)
+        scores = cross_val_score(self.model_ans, X_test_ans, y_test_ans, cv=5)
         self.print_execution_time(start_time, "cross_val_score on test")
         print("Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
+
+
+    def vectorize_data(self, data):
+        X_vect = self.vector.transform(data)
+        return X_vect
+
+
+    def predict(self, X_str):
+        print('query received by ClassifierInstance')
+        X_pred = self.vectorize_data([X_str])
+        print("-------------")
+        print(X_pred)
         
-        return ClassifierInstance(self.model, self.vector, target_dictionary)
+        
+        #answer prediction
+        y_pred_ans = self.model_ans.predict(X_pred)
+        print(self.model_ans.decision_function(y_pred_ans))
+        print("predicted ans value is - {0}".format(y_pred_ans[0]))
+        for (i, confidence) in zip (range(0,22), self.model_ans.decision_function(X_pred)[0]):
+            print("confidence for {0}:{1} is {2}".format(i, self.response_dictionary.get(i), confidence))
+        print(self.model_ans.decision_function(X_pred))
+        if np.amax(self.model_ans.decision_function(X_pred)) < 0.03 :
+            response = "I'm not sure I understood your question"
+            # At this point of time, bot should save the question
+            
+        else:
+            response = self.response_dictionary.get(y_pred_ans[0])
+        
+        '''        
+        #answer category prediction
+        y_pred_ans_cat = self.model_ans_cat.predict(X_pred)
+        print(self.model_ans_cat.decision_function(X_pred))
+        print("predicted ans cat value is - {0}".format(y_pred_ans_cat[0]))
+        for (i, confidence) in zip (range(0,22), self.model_ans_cat.decision_function(X_pred)[0]):
+            print("confidence for {0}:{1} is {2}".format(i, self.response_category_dictionary.get(i), confidence))
+        response_cat = self.response_category_dictionary.get(y_pred_ans_cat[0])
 
 
-    def classifier_instance(self, target_dictionary):
-        return ClassifierInstance(self.model, self.vector, target_dictionary)
+        #question category prediction
+        y_pred_ques_cat = self.model_ques_cat.predict(X_pred)
+        print(self.model_ques_cat.decision_function(X_pred))
+        print("predicted ans cat value is - {0}".format(y_pred_ques_cat[0]))
+        for (i, confidence) in zip (range(0,22), self.model_ques_cat.decision_function(X_pred)[0]):
+            print("confidence for {0}:{1} is {2}".format(i, self.ques_category_dictionary.get(i), confidence))
+        question_cat = self.ques_category_dictionary.get(y_pred_ques_cat[0])
+        
+        return response, response_cat, question_cat
+        
+        '''
+        return response
