@@ -12,7 +12,7 @@ class ModelType(Enum):
     XG_BOOST = 2
     RANDOM_FOREST = 3
     EXTRA_TREE = 4
-    SVM = 5
+    SVC = 5
     NB = 6
     ANN = 7
     BAGGING = 8

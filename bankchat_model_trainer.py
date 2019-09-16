@@ -25,22 +25,40 @@ import pickle
 
 
 train_file_location = 'consumer_questions.csv'
-col_answers_str = 'answer'
-col_answers_ordinal = 'answer-type'
-col_ques_str = 'question'
 
-predictor = Predictor(VectorType.TFIDF, ModelType.LOGISTIC, train_file_location, col_answers_str, col_answers_ordinal, col_ques_str)
+#dependent columns
+col_questions = 'question'
+
+#target columns
+col_answers = 'answer'
+col_answers_category = 'answer-category'
+col_questions_category = 'question-category'
+
+#equivalent numeric columns
+col_answers_numeric = col_answers + "_numeric"
+col_answers_category_numeric = col_answers_category + "_numeric"
+col_questions_category_numeric = col_questions_category + "_numeric"
+
+predictor = Predictor(VectorType.TFIDF, ModelType.SVC, train_file_location, col_answers, col_answers_category, col_questions, col_questions_category)
 
 data = predictor.read_train_data()
 data = predictor.preprocess_data(data)
-predictor.generate_response_dictionary(data)
+response_dictionary = predictor.generate_response_dictionary(data)
+ques_category_dictionary = predictor.generate_ques_category_dictionary(data)
+response_category_dictionary = predictor.generate_response_category_dictionary(data)
 
-X_train_vect, y_train, X_test_vect, y_test = predictor.vectorize_train_test(data)
+X_train_vect, y_train, X_test_vect, y_test = predictor.vectorize_train_test(data, col_questions, col_answers_numeric)
 
-model = predictor.train_model(X_train_vect, y_train)
-
-predictor.fit_train_test(data)
+answers_classifier = predictor.fit_train_test(data, col_questions, col_answers_numeric, response_dictionary)
+ques_category_classifier = predictor.fit_train_test(data, col_questions, col_questions_category_numeric, ques_category_dictionary)
+answers_category_dictionary = predictor.fit_train_test(data, col_questions, col_answers_category_numeric, response_category_dictionary)
 
 #save the model
-filename = 'saved_models/TFIDF_LOGISTIC_01_BANK_APP.sav'
-pickle.dump(predictor, open(filename, 'wb'))
+filename = 'saved_models/CLASSIFIER_TFIDF_LOGISTIC_ANSWERS.sav'
+pickle.dump(answers_classifier, open(filename, 'wb'))
+
+filename = 'saved_models/CLASSIFIER_TFIDF_LOGISTIC_ANSWERS_CATEGORY.sav'
+pickle.dump(answers_category_dictionary, open(filename, 'wb'))
+
+filename = 'saved_models/CLASSIFIER_TFIDF_LOGISTIC_QUESTIONS_CATEGORY.sav'
+pickle.dump(ques_category_classifier, open(filename, 'wb'))

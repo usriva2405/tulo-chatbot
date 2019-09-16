@@ -6,7 +6,7 @@ Created on Fri Sep 13 15:43:27 2019
 @author: usrivastava
 """
 
-from nlp_query_parser.model_selection.models import Logistic, RandomForest, ExtraTrees, Gauss
+from nlp_query_parser.model_selection.models import Logistic, RandomForest, ExtraTrees, Gauss, SVM
 from nlp_query_parser.model_selection.model_type import ModelType
 
 def get_model(type):
@@ -18,8 +18,8 @@ def get_model(type):
         return RandomForest().get_model()
     elif type == ModelType.EXTRA_TREE:
         return ExtraTrees().get_model()
-    elif type == ModelType.SVM:
-        return None
+    elif type == ModelType.SVC:
+        return SVM().get_model()
     elif type == ModelType.NB:
         return Gauss().get_model()
     elif type == ModelType.ANN:
