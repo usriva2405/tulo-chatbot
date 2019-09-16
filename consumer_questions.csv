@@ -136,6 +136,21 @@ You are bad,expletive,static-query,16,Sorry you feel this way. Is there anything
 you’re bad,expletive,static-query,16,Sorry you feel this way. Is there anything I can do for you?
 you’re crazy,expletive,static-query,16,Sorry you feel this way. Is there anything I can do for you?
 You are crazy,expletive,static-query,16,Sorry you feel this way. Is there anything I can do for you?
+need to talk to human,escalation,static-query,17,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
+Let me talk to customer agent,escalation,static-query,17,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
+Let me talk to customer support,escalation,static-query,17,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
+Let me speak to customer service,escalation,static-query,17,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
+Let me speak to customer agent,escalation,static-query,17,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
+Let me speak to customer support,escalation,static-query,17,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
+Let me talk to customer service,escalation,static-query,17,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
+Customer service,escalation,static-query,17,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
+Customer support,escalation,static-query,17,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
+Customer agent,escalation,static-query,17,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
+Need a human,escalation,static-query,17,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
+Need live human,escalation,static-query,17,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
+need to speak to human,escalation,static-query,17,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
+I need customer support,escalation,static-query,17,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
+Need customer support,escalation,static-query,17,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
 I want to speak to human,escalation,static-query,17,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
 I want to speak to customer service,escalation,static-query,17,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
 I need human,escalation,static-query,17,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!

@@ -144,9 +144,13 @@ class Predictor:
         X_pred = self.vector.transform([X_str])
         y_pred = self.model.predict(X_pred)
         #print(self.model.predict_proba(X_pred))
+        for (i, confidence) in zip (range(18), self.model.decision_function(X_pred)):
+            print("confidence for {0} is {1}".format(i, confidence))
         print(self.model.decision_function(X_pred))
         if np.amax(self.model.decision_function(X_pred)) < 0.09 :
             response = "I'm not sure I understood your question"
+            # At this point of time, bot should save the question
+            
         else:
             response = self.response_dictionary.get(y_pred[0])
         
