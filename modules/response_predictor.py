@@ -134,7 +134,7 @@ class Predictor:
         print("Execution of " + function_str + " function took " + str(end_time - start_time) + " seconds")
 
     
-    def fit_train_test(self, data, ques_col, target_col_numeric, target_dictionary):
+    def fit_train_test(self, data, ques_col, target_col_numeric, target_dictionary, use_decision_function, decision_boundary):
         print('--------------------------------------------------------------------------------')
         self.model_ans = model_factory.get_model(self.model_type)
         print('train for answers')
@@ -186,11 +186,11 @@ class Predictor:
         self.print_execution_time(start_time, "cross_val_score on test")
         print("Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
         
-        return self.get_classifier_instance(target_dictionary)
+        return self.get_classifier_instance(target_dictionary, use_decision_function, decision_boundary)
     
     
-    def get_classifier_instance(self, target_dictionary):
-        return ClassifierInstance(self.model_ans, self.vector, target_dictionary) 
+    def get_classifier_instance(self, target_dictionary, use_decision_function, decision_boundary):
+        return ClassifierInstance(self.model_ans, self.vector, target_dictionary, use_decision_function, decision_boundary) 
         
     
     def vectorize_data(self, X_str):

@@ -50,9 +50,9 @@ response_category_dictionary = predictor.generate_response_category_dictionary(d
 ques_category_dictionary = predictor.generate_ques_category_dictionary(data)
 
 
-response_classifier = predictor.fit_train_test(data, col_questions, col_answers_numeric, response_dictionary)
-response_category_classifier = predictor.fit_train_test(data, col_questions, col_answers_category_numeric, response_category_dictionary)
-question_category_classifier = predictor.fit_train_test(data, col_questions, col_questions_category_numeric, ques_category_dictionary)
+response_classifier = predictor.fit_train_test(data, col_questions, col_answers_numeric, response_dictionary, True, 0.03)
+response_category_classifier = predictor.fit_train_test(data, col_questions, col_answers_category_numeric, response_category_dictionary, False, 0.0)
+question_category_classifier = predictor.fit_train_test(data, col_questions, col_questions_category_numeric, ques_category_dictionary, True, 0.03)
 
 #save the model
 filename = 'modules/saved_models/CLASSIFIER_TFIDF_LOGISTIC_ANSWERS_02.sav'

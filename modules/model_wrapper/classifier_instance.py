@@ -13,10 +13,12 @@ import numpy as np
 
 class ClassifierInstance:
     
-    def __init__(self, model, vector, target_dictionary):
+    def __init__(self, model, vector, target_dictionary, use_decision_function, decision_boundary):
         self.model = model
         self.vector = vector
         self.target_dictionary = target_dictionary
+        self.use_decision_function = use_decision_function
+        self.decision_boundary = decision_boundary
         print(target_dictionary)
         
     def get_model(self):
@@ -44,11 +46,15 @@ class ClassifierInstance:
         y_pred = self.model.predict(X_pred)
         print(self.model.decision_function(X_pred))
         print("predicted value is - {0}".format(y_pred[0]))
-        if np.amax(self.model.decision_function(X_pred)) < 0.03 :
-            response = "I'm not sure I understood your question"
-            # At this point of time, bot should save the question
-            
+        
+        if self.use_decision_function == True :            
+            if np.amax(self.model.decision_function(X_pred)) < self.decision_boundary :
+                response = "I'm not sure I understood your question"
+                # At this point of time, bot should save the question
+                
+            else:
+                response = self.target_dictionary.get(y_pred[0])
         else:
             response = self.target_dictionary.get(y_pred[0])
-        
+            
         return response
