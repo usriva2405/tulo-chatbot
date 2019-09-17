@@ -45,12 +45,19 @@ def query(update, context):
     text = update.message.text
     if closing_statement(text) == True:
         logger.info("closing_statement = true %s: %s", user.first_name, update.message.text)
-        answer = bankchat_app.predict_answer(text)
+        answer, answer_cat, question_cat = bankchat_app.predict_answer(text)
         update.message.reply_text(answer)
         return CANCEL
     else:
         #predict resposne
-        answer = bankchat_app.predict_answer(text)
+        answer, answer_cat, question_cat = bankchat_app.predict_answer(text)
+        
+        logger.info('************************')
+        logger.info('Prediction given by model')
+        logger.info('************************')
+        logger.info("answer : {0}".format(answer))
+        logger.info("answer category : {0}".format(answer_cat))
+        logger.info("ques category : {0}".format(question_cat))
         response = answer + '\n\n Can I help you with anything else?'
         
         logger.info("Query %s: %s", user.first_name, update.message.text)

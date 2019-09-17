@@ -44,9 +44,6 @@ class ClassifierInstance:
         y_pred = self.model.predict(X_pred)
         print(self.model.decision_function(X_pred))
         print("predicted value is - {0}".format(y_pred[0]))
-        for (i, confidence) in zip (range(0,22), self.model.decision_function(X_pred)[0]):
-            print("confidence for {0}:{1} is {2}".format(i, self.target_dictionary.get(i), confidence))
-        print(self.model.decision_function(X_pred))
         if np.amax(self.model.decision_function(X_pred)) < 0.03 :
             response = "I'm not sure I understood your question"
             # At this point of time, bot should save the question

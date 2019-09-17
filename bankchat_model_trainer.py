@@ -39,7 +39,7 @@ col_answers_numeric = col_answers + "_numeric"
 col_answers_category_numeric = col_answers_category + "_numeric"
 col_questions_category_numeric = col_questions_category + "_numeric"
 
-predictor = Predictor(VectorType.TFIDF, ModelType.SVC, train_file_location, col_answers, col_answers_category, col_questions, col_questions_category)
+predictor = Predictor(VectorType.TFIDF, ModelType.LOGISTIC, train_file_location, col_answers, col_answers_category, col_questions, col_questions_category)
 
 data = predictor.read_train_data()
 data = predictor.preprocess_data(data)

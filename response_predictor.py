@@ -54,9 +54,11 @@ class Predictor:
         self.col_questions_category_numeric = self.col_questions_category + "_numeric"
 
         self.model_ans = model_factory.get_model(model_type)
+        self.vector = vectorizer_factory.get_vector(vector_type)
+        
+        # not getting used anymore
         self.model_ans_cat = model_factory.get_model(model_type)
         self.model_ques_cat = model_factory.get_model(model_type)
-        self.vector = vectorizer_factory.get_vector(vector_type)
         
     def read_train_data(self):    
         consumer_ques = pd.read_csv(self.train_file_location)
@@ -99,14 +101,31 @@ class Predictor:
         
         X = data[col_questions].values
         y = data[col_target_numeric].values
-    
+        
+        print('***************************')
+        print('testing BEFORE split')
+        print('***************************')
+        print(X.shape)
+        print(y.shape)
         # split the new DataFrame into training and testing sets [Default test size = 25%]
         X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1)
+        
+        print('***************************')
+        print('testing after split')
+        print('***************************')
+        print(X_train.shape)
+        print(y_train.shape)
         return X_train, X_test, y_train, y_test
 
 
     def vectorize_train_test(self, data, col_questions, col_target_numeric):
         X_train, X_test, y_train, y_test = self.split_data(data, col_questions, col_target_numeric)
+        print('***************************')
+        print('testing before vectorization')
+        print('***************************')
+        print(X_train.shape)
+        print(y_train.shape)
+        
         #vect = vectorizer_factory.get_vector(vector_type)
         X_train_vect = self.vector.fit_transform(X_train)
         X_test_vect = self.vector.transform(X_test)
@@ -138,7 +157,7 @@ class Predictor:
         start_time = self.get_start_time()
         self.model_ans.fit(X_train_ans, y_train_ans)
 
-        '''
+        
         print('train for answers categories')
         #answers categories
         X_train_ans_cat, y_train_ans_cat, X_test_ans_cat, y_test_ans_cat = self.vectorize_train_test(data, self.col_questions, self.col_answers_category_numeric)
@@ -150,7 +169,7 @@ class Predictor:
         X_train_ques_cat, y_train_ques_cat, X_test_ques_cat, y_test_ques_cat = self.vectorize_train_test(data, self.col_questions, self.col_questions_category_numeric)
         start_time = self.get_start_time()
         self.model_ques_cat.fit(X_train_ques_cat, y_train_ques_cat)
-        '''
+        
 
         self.print_execution_time(start_time, "fit on train")
           
@@ -182,21 +201,15 @@ class Predictor:
         print("Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
 
 
-    def vectorize_data(self, data):
-        X_vect = self.vector.transform(data)
-        return X_vect
-
-
     def predict(self, X_str):
         print('query received by ClassifierInstance')
-        X_pred = self.vectorize_data([X_str])
+        X_pred = self.vector.transform([X_str])
         print("-------------")
-        print(X_pred)
-        
+        print(self.vector.get_feature_names())
+        print(X_pred.shape)
         
         #answer prediction
         y_pred_ans = self.model_ans.predict(X_pred)
-        print(self.model_ans.decision_function(y_pred_ans))
         print("predicted ans value is - {0}".format(y_pred_ans[0]))
         for (i, confidence) in zip (range(0,22), self.model_ans.decision_function(X_pred)[0]):
             print("confidence for {0}:{1} is {2}".format(i, self.response_dictionary.get(i), confidence))
@@ -208,20 +221,18 @@ class Predictor:
         else:
             response = self.response_dictionary.get(y_pred_ans[0])
         
-        '''        
+        
         #answer category prediction
         y_pred_ans_cat = self.model_ans_cat.predict(X_pred)
         print(self.model_ans_cat.decision_function(X_pred))
         print("predicted ans cat value is - {0}".format(y_pred_ans_cat[0]))
-        for (i, confidence) in zip (range(0,22), self.model_ans_cat.decision_function(X_pred)[0]):
-            print("confidence for {0}:{1} is {2}".format(i, self.response_category_dictionary.get(i), confidence))
         response_cat = self.response_category_dictionary.get(y_pred_ans_cat[0])
 
 
         #question category prediction
         y_pred_ques_cat = self.model_ques_cat.predict(X_pred)
         print(self.model_ques_cat.decision_function(X_pred))
-        print("predicted ans cat value is - {0}".format(y_pred_ques_cat[0]))
+        print("predicted question cat value is - {0}".format(y_pred_ques_cat[0]))
         for (i, confidence) in zip (range(0,22), self.model_ques_cat.decision_function(X_pred)[0]):
             print("confidence for {0}:{1} is {2}".format(i, self.ques_category_dictionary.get(i), confidence))
         question_cat = self.ques_category_dictionary.get(y_pred_ques_cat[0])
@@ -230,3 +241,4 @@ class Predictor:
         
         '''
         return response
+        '''
