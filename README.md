@@ -44,3 +44,11 @@ reason point 4 is required because the bot confuses between queries like "You're
 5. Add normalizer to look for spelling mistakes
 6. Add lemmatization and stemming to improve accuracy
 7. Add additional classifier for estimating category of question. This can be used to send input to selective classifier based on category.
+
+
+
+# HEROKU DEPLOYMENT
+
+heroku create bankchat-app
+heroku buildpacks:set heroku/python
+heroku logs
