@@ -18,13 +18,13 @@ Created on Sun Sep 15 10:56:19 2019
     RECOMMENDATION: change the filename when you change the model
 """
 
-from response_predictor import Predictor
-from nlp_query_parser.vector_type import VectorType
-from nlp_query_parser.model_selection.model_type import ModelType
+from modules.response_predictor import Predictor
+from modules.nlp_query_parser.vector_type import VectorType
+from modules.nlp_query_parser.model_selection.model_type import ModelType
 import pickle
 
 
-train_file_location = 'consumer_questions.csv'
+train_file_location = 'modules/data/consumer_questions.csv'
 
 #dependent columns
 col_questions = 'question'
@@ -55,11 +55,11 @@ response_category_classifier = predictor.fit_train_test(data, col_questions, col
 question_category_classifier = predictor.fit_train_test(data, col_questions, col_questions_category_numeric, ques_category_dictionary)
 
 #save the model
-filename = 'saved_models/CLASSIFIER_TFIDF_LOGISTIC_ANSWERS_02.sav'
+filename = 'modules/saved_models/CLASSIFIER_TFIDF_LOGISTIC_ANSWERS_02.sav'
 pickle.dump(response_classifier, open(filename, 'wb'))
 
-filename = 'saved_models/CLASSIFIER_TFIDF_LOGISTIC_ANSWERS_CATEGORY_02.sav'
+filename = 'modules/saved_models/CLASSIFIER_TFIDF_LOGISTIC_ANSWERS_CATEGORY_02.sav'
 pickle.dump(response_category_classifier, open(filename, 'wb'))
 
-filename = 'saved_models/CLASSIFIER_TFIDF_LOGISTIC_QUESTIONS_CATEGORY_02.sav'
+filename = 'modules/saved_models/CLASSIFIER_TFIDF_LOGISTIC_QUESTIONS_CATEGORY_02.sav'
 pickle.dump(question_category_classifier, open(filename, 'wb'))

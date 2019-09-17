@@ -7,6 +7,9 @@ import re
 import logging
 import configparser
 
+import sys, os
+sys.path.insert(0, os.path.abspath('..'))
+
 # Custom Modules
 from bankchat_app import BankApp
 

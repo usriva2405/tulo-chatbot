@@ -22,10 +22,10 @@ from sklearn.pipeline import Pipeline
 from sklearn.metrics import r2_score, mean_squared_error, classification_report
 
 # custom modules/ packages
-from nlp_query_parser import vectorizer_factory
-from nlp_query_parser.vector_type import VectorType
-from nlp_query_parser.model_selection import model_factory
-from model_wrapper.classifier_instance import ClassifierInstance
+from modules.nlp_query_parser import vectorizer_factory
+from modules.nlp_query_parser.vector_type import VectorType
+from modules.nlp_query_parser.model_selection import model_factory
+from modules.model_wrapper.classifier_instance import ClassifierInstance
 
 import warnings
 warnings.filterwarnings('ignore')

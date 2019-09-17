@@ -200,3 +200,26 @@ Can you unblock my card?,card-unblock,dynamic-query,Sure. Your card ending XXXX 
 Please unblock my card,card-unblock,dynamic-query,Sure. Your card ending XXXX has been successfully unblocked.
 I need to unblock my card,card-unblock,dynamic-query,Sure. Your card ending XXXX has been successfully unblocked.
 Card needs to be unblocked,card-unblock,dynamic-query,Sure. Your card ending XXXX has been successfully unblocked.
+How much money do I have?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
+How much money do I have in my bank account?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
+Show me the money!!,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
+Where’s my money?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
+what’s my money?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
+money?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
+Show me the moolah!,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
+Woohoooo!!!,small-talk,static-query,You sound happy! How can I help you with your account?
+Woohoo!!,small-talk,static-query,You sound happy! How can I help you with your account?
+Yippiee!,small-talk,static-query,You sound happy! How can I help you with your account?
+Yahoo!,small-talk,static-query,You sound happy! How can I help you with your account?
+wtf?,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
+WTH?,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
+fuck this,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
+Are you stupid?,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
+Are you idiot?,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
+You are stupid,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
+You're stupid,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
+You are dumb,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
+you’re dumb,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
+you’re fuck,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
+you are fuck,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
+What the hell,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
