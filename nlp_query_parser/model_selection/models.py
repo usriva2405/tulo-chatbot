@@ -61,7 +61,15 @@ class Gauss:
         return clf
     
     
-    
+class SVM:
+    def __init__(self):
+        self.kernel = 'rbf'
+        self.C = 1e6
+        self.gamma = 0.0001
+        
+    def get_model(self):
+        clf = SVC(kernel=self.kernel, C = self.C, gamma = self.gamma)
+        return clf
         
         
         
