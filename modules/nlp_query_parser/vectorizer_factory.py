@@ -6,8 +6,8 @@ Created on Fri Sep 13 11:23:01 2019
 @author: usrivastava
 """
 
-from nlp_query_parser.vectorizers import TfidfVector, CountVector
-from nlp_query_parser.vector_type import VectorType
+from modules.nlp_query_parser.vectorizers import TfidfVector, CountVector
+from modules.nlp_query_parser.vector_type import VectorType
 
 def get_vector(type):
     if type == VectorType.TFIDF:
