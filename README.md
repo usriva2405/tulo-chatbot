@@ -32,7 +32,7 @@ responses can be of 2 types -
 
 # TODO
 this is just a start. Following items are top of my mind, apart from few others - 
-1. Create Flask APIs - prediction function should be exposed via flask, so that it becomes implementation agnostic
+1. ~~Create Flask APIs - prediction function should be exposed via flask, so that it becomes implementation agnostic~~
 2. Improve architecture
 3. Add error handling
 4. Add higher weightage to classes which fall in the category of expletives, or escalations - 
@@ -42,13 +42,13 @@ this is just a start. Following items are top of my mind, apart from few others 
 reason point 4 is required because the bot confuses between queries like "You're Cute" and "You're Stupid", and responds in a similar fashion.
 
 5. Add normalizer to look for spelling mistakes
-6. Add lemmatization and stemming to improve accuracy
+6. ~~Add lemmatization and stemming to improve accuracy~~
 7. Add additional classifier for estimating category of question. This can be used to send input to selective classifier based on category.
 
 
 
 # HEROKU DEPLOYMENT
 
-heroku create bankchat-app
-heroku buildpacks:set heroku/python
-heroku logs
+1. heroku create bankchat-app
+2. heroku buildpacks:set heroku/python
+3. heroku logs
