@@ -18,13 +18,13 @@ Created on Sun Sep 15 10:56:19 2019
     RECOMMENDATION: change the filename when you change the model
 """
 
-from response_predictor import Predictor
+from model_wrapper.response_predictor import Predictor
 from nlp_query_parser.vector_type import VectorType
 from nlp_query_parser.model_selection.model_type import ModelType
 import pickle
 
 
-train_file_location = 'consumer_questions.csv'
+train_file_location = 'data/consumer_questions.csv'
 
 #dependent columns
 col_questions = 'question'

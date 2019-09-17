@@ -25,7 +25,7 @@ from sklearn.metrics import r2_score, mean_squared_error, classification_report
 from nlp_query_parser import vectorizer_factory
 from nlp_query_parser.vector_type import VectorType
 from nlp_query_parser.model_selection import model_factory
-from model_wrapper.classifier_instance import ClassifierInstance
+from classifier_instance import ClassifierInstance
 
 import warnings
 warnings.filterwarnings('ignore')
