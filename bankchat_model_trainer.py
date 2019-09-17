@@ -43,12 +43,23 @@ predictor = Predictor(VectorType.TFIDF, ModelType.LOGISTIC, train_file_location,
 
 data = predictor.read_train_data()
 data = predictor.preprocess_data(data)
-response_dictionary = predictor.generate_response_dictionary(data)
-ques_category_dictionary = predictor.generate_ques_category_dictionary(data)
-response_category_dictionary = predictor.generate_response_category_dictionary(data)
 
-predictor.fit_train_test(data)
+# dictionaries
+response_dictionary = predictor.generate_response_dictionary(data)
+response_category_dictionary = predictor.generate_response_category_dictionary(data)
+ques_category_dictionary = predictor.generate_ques_category_dictionary(data)
+
+
+response_classifier = predictor.fit_train_test(data, col_questions, col_answers_numeric, response_dictionary)
+response_category_classifier = predictor.fit_train_test(data, col_questions, col_answers_category_numeric, response_category_dictionary)
+question_category_classifier = predictor.fit_train_test(data, col_questions, col_questions_category_numeric, ques_category_dictionary)
 
 #save the model
-filename = 'saved_models/CLASSIFIER_TFIDF_LOGISTIC_ANSWERS_01.sav'
-pickle.dump(predictor, open(filename, 'wb'))
+filename = 'saved_models/CLASSIFIER_TFIDF_LOGISTIC_ANSWERS_02.sav'
+pickle.dump(response_classifier, open(filename, 'wb'))
+
+filename = 'saved_models/CLASSIFIER_TFIDF_LOGISTIC_ANSWERS_CATEGORY_02.sav'
+pickle.dump(response_category_classifier, open(filename, 'wb'))
+
+filename = 'saved_models/CLASSIFIER_TFIDF_LOGISTIC_QUESTIONS_CATEGORY_02.sav'
+pickle.dump(question_category_classifier, open(filename, 'wb'))

@@ -53,7 +53,9 @@ class Predictor:
         self.col_questions_category = col_ques_category_str
         self.col_questions_category_numeric = self.col_questions_category + "_numeric"
 
+        self.model_type = model_type
         self.model_ans = model_factory.get_model(model_type)
+        self.vector_type = vector_type
         self.vector = vectorizer_factory.get_vector(vector_type)
         
         # not getting used anymore
@@ -75,24 +77,20 @@ class Predictor:
     def generate_category_dictionary(self, data, column_name, column_name_numeric):
         #response_dict = pd.Series(data['answer'],index=data['answer-type']).to_dict()
         response_dict =dict(zip(data[column_name_numeric], data[column_name]))
-        print(response_dict)
         return response_dict
         #return response_dict
 
     def generate_response_dictionary(self, data):
-        print('generating reponse dictionary')
         data = self.encode_label(data, self.col_answers, self.col_answers_numeric)
         self.response_dictionary = self.generate_category_dictionary(data, self.col_answers, self.col_answers_numeric)
         return self.response_dictionary
 
     def generate_ques_category_dictionary(self, data):
-        print('generating questions category dictionary')
         data = self.encode_label(data, self.col_questions_category, self.col_questions_category_numeric)
         self.ques_category_dictionary = self.generate_category_dictionary(data, self.col_questions_category, self.col_questions_category_numeric)
         return self.ques_category_dictionary
 
     def generate_response_category_dictionary(self, data):
-        print('generating response category dictionary')
         data = self.encode_label(data, self.col_answers_category, self.col_answers_category_numeric)
         self.response_category_dictionary = self.generate_category_dictionary(data, self.col_answers_category, self.col_answers_category_numeric)
         return self.response_category_dictionary
@@ -101,32 +99,20 @@ class Predictor:
         
         X = data[col_questions].values
         y = data[col_target_numeric].values
+        print('split_data')
+        print('unique values for {0}'.format(col_target_numeric))
+        print(np.unique(data[col_target_numeric].values))
         
-        print('***************************')
-        print('testing BEFORE split')
-        print('***************************')
-        print(X.shape)
-        print(y.shape)
         # split the new DataFrame into training and testing sets [Default test size = 25%]
         X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1)
         
-        print('***************************')
-        print('testing after split')
-        print('***************************')
-        print(X_train.shape)
-        print(y_train.shape)
         return X_train, X_test, y_train, y_test
 
 
     def vectorize_train_test(self, data, col_questions, col_target_numeric):
         X_train, X_test, y_train, y_test = self.split_data(data, col_questions, col_target_numeric)
-        print('***************************')
-        print('testing before vectorization')
-        print('***************************')
-        print(X_train.shape)
-        print(y_train.shape)
         
-        #vect = vectorizer_factory.get_vector(vector_type)
+        self.vector = vectorizer_factory.get_vector(self.vector_type)
         X_train_vect = self.vector.fit_transform(X_train)
         X_test_vect = self.vector.transform(X_test)
         return X_train_vect, y_train, X_test_vect, y_test
@@ -148,16 +134,16 @@ class Predictor:
         print("Execution of " + function_str + " function took " + str(end_time - start_time) + " seconds")
 
     
-    def fit_train_test(self, data):
+    def fit_train_test(self, data, ques_col, target_col_numeric, target_dictionary):
         print('--------------------------------------------------------------------------------')
-        
+        self.model_ans = model_factory.get_model(self.model_type)
         print('train for answers')
         #answers
-        X_train_ans, y_train_ans, X_test_ans, y_test_ans = self.vectorize_train_test(data, self.col_questions, self.col_answers_numeric)
+        X_train_ans, y_train_ans, X_test_ans, y_test_ans = self.vectorize_train_test(data, ques_col, target_col_numeric)
         start_time = self.get_start_time()
         self.model_ans.fit(X_train_ans, y_train_ans)
 
-        
+        '''
         print('train for answers categories')
         #answers categories
         X_train_ans_cat, y_train_ans_cat, X_test_ans_cat, y_test_ans_cat = self.vectorize_train_test(data, self.col_questions, self.col_answers_category_numeric)
@@ -169,7 +155,7 @@ class Predictor:
         X_train_ques_cat, y_train_ques_cat, X_test_ques_cat, y_test_ques_cat = self.vectorize_train_test(data, self.col_questions, self.col_questions_category_numeric)
         start_time = self.get_start_time()
         self.model_ques_cat.fit(X_train_ques_cat, y_train_ques_cat)
-        
+        '''
 
         self.print_execution_time(start_time, "fit on train")
           
@@ -199,11 +185,21 @@ class Predictor:
         scores = cross_val_score(self.model_ans, X_test_ans, y_test_ans, cv=5)
         self.print_execution_time(start_time, "cross_val_score on test")
         print("Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
+        
+        return self.get_classifier_instance(target_dictionary)
+    
+    
+    def get_classifier_instance(self, target_dictionary):
+        return ClassifierInstance(self.model_ans, self.vector, target_dictionary) 
+        
+    
+    def vectorize_data(self, X_str):
+        return self.vector.transform([X_str])
 
 
     def predict(self, X_str):
         print('query received by ClassifierInstance')
-        X_pred = self.vector.transform([X_str])
+        X_pred = self.vectorize_data(X_str)
         print("-------------")
         print(self.vector.get_feature_names())
         print(X_pred.shape)
@@ -221,7 +217,7 @@ class Predictor:
         else:
             response = self.response_dictionary.get(y_pred_ans[0])
         
-        
+        '''
         #answer category prediction
         y_pred_ans_cat = self.model_ans_cat.predict(X_pred)
         print(self.model_ans_cat.decision_function(X_pred))
@@ -241,4 +237,4 @@ class Predictor:
         
         '''
         return response
-        '''
+        
