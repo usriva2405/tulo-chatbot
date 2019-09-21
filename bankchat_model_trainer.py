@@ -22,17 +22,29 @@ from modules.response_predictor import Predictor
 from modules.nlp_query_parser.vector_type import VectorType
 from modules.nlp_query_parser.model_selection.model_type import ModelType
 import pickle
+import configparser
+import logging
 
 
-train_file_location = 'modules/data/consumer_questions.csv'
+# Enable logging
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
+
+logger = logging.getLogger(__name__)
+
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+#training file location
+train_file_location = 'modules/data/' + config['data']['train-file-name']
 
 #dependent columns
-col_questions = 'question'
+col_questions = config['data']['ques-col']
 
 #target columns
-col_answers = 'answer'
-col_answers_category = 'answer-category'
-col_questions_category = 'question-category'
+col_answers = config['data']['ans-col']
+col_answers_category = config['data']['ans-cat-col']
+col_questions_category = config['data']['ques-cat-col']
 
 #equivalent numeric columns
 col_answers_numeric = col_answers + "_numeric"
@@ -55,11 +67,11 @@ response_category_classifier = predictor.fit_train_test(data, col_questions, col
 question_category_classifier = predictor.fit_train_test(data, col_questions, col_questions_category_numeric, ques_category_dictionary, True, 0.03)
 
 #save the model
-filename = 'modules/saved_models/CLASSIFIER_TFIDF_LOGISTIC_ANSWERS_02.sav'
+filename = 'modules/saved_models/' + config['model-file-name']['ans-classifier']
 pickle.dump(response_classifier, open(filename, 'wb'))
 
-filename = 'modules/saved_models/CLASSIFIER_TFIDF_LOGISTIC_ANSWERS_CATEGORY_02.sav'
+filename = 'modules/saved_models/' + config['model-file-name']['ans-cat-classifier']
 pickle.dump(response_category_classifier, open(filename, 'wb'))
 
-filename = 'modules/saved_models/CLASSIFIER_TFIDF_LOGISTIC_QUESTIONS_CATEGORY_02.sav'
+filename = 'modules/saved_models/' + config['model-file-name']['ques-cat-classifier']
 pickle.dump(question_category_classifier, open(filename, 'wb'))

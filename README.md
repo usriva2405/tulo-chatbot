@@ -34,7 +34,7 @@ responses can be of 2 types -
 this is just a start. Following items are top of my mind, apart from few others - 
 1. ~~Create Flask APIs - prediction function should be exposed via flask, so that it becomes implementation agnostic~~
 2. Improve architecture
-3. Add error handling
+3. Add error handling and add comments
 4. Add higher weightage to classes which fall in the category of expletives, or escalations - 
  - One way is to have separate models for various categories, for e.g., expletive, escalations and business specific queries.
  - Add a voting classifier on top of all models to correctly estimate the response
@@ -44,7 +44,13 @@ reason point 4 is required because the bot confuses between queries like "You're
 5. Add normalizer to look for spelling mistakes
 6. ~~Add lemmatization and stemming to improve accuracy~~
 7. Add additional classifier for estimating category of question. This can be used to send input to selective classifier based on category.
-
+8. Add follow-up queries support.
+9. Add process to record unclassified queries
+ - If system identifies an unclassified query, it should be appended, to be able to access at later stage, for retraining.
+10. Restructure the training data storage. More on this below.
+11. Move data to database instead of csv file. that ways, it would be better managed.
+12. Implement an GUI for adding data/ training, once point 10 is completed.
+13. Add Multi-lingual support.
 
 
 # HEROKU DEPLOYMENT
@@ -52,3 +58,10 @@ reason point 4 is required because the bot confuses between queries like "You're
 1. heroku create bankchat-app
 2. heroku buildpacks:set heroku/python
 3. heroku logs
+
+## TRAINING DATA RESTRUCTURING
+Current data is structured in a flat file as below -
+1. question
+2. question-category
+3. answer-category
+4. answer
