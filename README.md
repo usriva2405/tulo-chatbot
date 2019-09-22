@@ -51,17 +51,3 @@ reason point 4 is required because the bot confuses between queries like "You're
 11. Move data to database instead of csv file. that ways, it would be better managed.
 12. Implement an GUI for adding data/ training, once point 10 is completed.
 13. Add Multi-lingual support.
-
-
-# HEROKU DEPLOYMENT
-
-1. heroku create bankchat-app
-2. heroku buildpacks:set heroku/python
-3. heroku logs
-
-## TRAINING DATA RESTRUCTURING
-Current data is structured in a flat file as below -
-1. question
-2. question-category
-3. answer-category
-4. answer
