@@ -1,8 +1,5 @@
-# ml-bank-chatbot-telegram
-ML based chatbot for banking applications
-
-## Telegram Banking Bot
-This bot is a generic conversational bot, designed for use case of a Banking App.
+## Tulo-Chatbot
+This bot is a generic machine learning based conversational bot, designed for use case of a Banking App.
 the packages are as below - 
 1. nlp_query_parser - this contains implementation of vectorization algorithms. To implement a new vectorization algorithm, add as a class to vectorizers, and reference it in the vector_factory, followed by creating an enum in vector_types.
 2. nlp_query_parser.model_selection - this contains classification models. Follows the same pattern as vectors above. I've not implemented all the algorithms.
@@ -10,6 +7,8 @@ the packages are as below -
 N. B. - I'm still learning how to structure a python project. Please feel free to point out better implementations. 
 
 While this is a prelim work, I intend to grow/ mature it and make it production ready. Please feel free to make contributions to it wherever necessary. (Raise a merge request)
+
+For more details refer to (https://github.com/usriva2405/tulo-chatbot/wiki)
 
 Note on using Telegram : It is quite easy to prototype chatbots with Telegram-bot-api. however, the telegram class has been kept separate from the actual bot implementation.
 So going forward, the same bot can be extended to facebook messenger, whatsapp business api, wechat and any other messaging app.
