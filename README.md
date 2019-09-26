@@ -4,7 +4,7 @@ the packages are as below -
 1. nlp_query_parser - this contains implementation of vectorization algorithms. To implement a new vectorization algorithm, add as a class to vectorizers, and reference it in the vector_factory, followed by creating an enum in vector_types.
 2. nlp_query_parser.model_selection - this contains classification models. Follows the same pattern as vectors above. I've not implemented all the algorithms.
 
-N. B. - I'm still learning how to structure a python project. Please feel free to point out better implementations. 
+N. B. - Please feel free to point out better implementations. Also, this is under active development (see project/ issues). remember to STAR it/ WATCH it for future developments.
 
 While this is a prelim work, I intend to grow/ mature it and make it production ready. Please feel free to make contributions to it wherever necessary. (Raise a merge request)
 
