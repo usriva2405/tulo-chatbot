@@ -1,225 +1,225 @@
-question,question-category,answer-category,answer
-What is my balance?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-what is the balance?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-What is my total amount?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-what is my amount?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-What is the total account balance?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-What is my total account balance?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-What is my account balance?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-What is the balance in my account?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-What is my card balance?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-what is the balance in my card?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-What is my wallet balance?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-What is the wallet balance?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-what is the balance in my wallet?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-My balance?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-my wallet balance?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-My card balance?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-I need to know my card balance,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-I need to know my wallet balance,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-I need to know my account balance,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-I need to know my balance,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-I want to know my card balance,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-I want to know my wallet balance,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-I want to know my account balance,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-I want to know my balance,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-balance?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-Card balance,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-Wallet balance,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-What is my transaction history?,transaction-history-inquiry,dynamic-query,"Your wallet balance is $3,261"
-what is the transaction history?,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-What is my total amount?,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-what is my amount?,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-What is the total account transaction history?,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-What is my total account transaction history?,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-What is my account transaction history?,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-What is the transaction history in my account?,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-What is my card transaction history?,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-what is the transaction history in my card?,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-What is my wallet transaction history?,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-What is the wallet transaction history?,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-what is the transaction history in my wallet?,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-My transaction history?,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-my wallet transaction history?,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-My card transaction history?,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-I need to know my card transaction history,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-I need to know my wallet transaction history,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-I need to know my account transaction history,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-I need to know my transaction history,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-I want to know my card transaction history,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-I want to know my wallet transaction history,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-I want to know my account transaction history,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-I want to know my transaction history,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-transaction history?,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-Card transaction history,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-Wallet transaction history,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-Transactions?,transaction-history-inquiry,dynamic-query,"I found following as your transaction history -  <pre> |     Date.   | Type  |  Amount.  | —————————————- | 12/03/19 |   Cr.   | QAR 21.2 | —————————————- </pre>"
-Hello there!,introduction,static-query,Hi! How can I help you with your account?
-Hi,introduction,static-query,Hi! How can I help you with your account?
-Hello,introduction,static-query,Hi! How can I help you with your account?
-Hey,introduction,static-query,Hi! How can I help you with your account?
-Hey there,introduction,static-query,Hi! How can I help you with your account?
-Good morning,introduction,static-query,Good morning! How can I help?
-Good afternoon,introduction,static-query,Good afternoon! How can I help?
-good evening,introduction,static-query,Good evening! How can I help?
-Hello sir,introduction,static-query,Hi! How can I help you with your account?
-hello mam,introduction,static-query,Hi! How can I help you with your account?
-thanks,introduction,static-query,Glad to service you. Have a nice day.
-Thank you,introduction,static-query,Glad to service you. Have a nice day.
-That would be all,introduction,static-query,Glad to service you. Have a nice day.
-that should be all,introduction,static-query,Glad to service you. Have a nice day.
-thank!,introduction,static-query,Glad to service you. Have a nice day.
-no,introduction,static-query,Glad to service you. Have a nice day.
-No thank you,introduction,static-query,Glad to service you. Have a nice day.
-That’s it,introduction,static-query,Glad to service you. Have a nice day.
-that’s enough,introduction,static-query,Glad to service you. Have a nice day.
-Nothing else,introduction,static-query,Glad to service you. Have a nice day.
-No more,introduction,static-query,Glad to service you. Have a nice day.
-I’m satisfied,introduction,static-query,Glad to service you. Have a nice day.
-i am satisfied,introduction,static-query,Glad to service you. Have a nice day.
-good day,introduction,static-query,Glad to service you. Have a nice day.
-Good night,introduction,static-query,Glad to service you. Have a nice day.
-How are you?,small-talk,static-query,I’m good. Thanks for asking!!
-How are you doing?,small-talk,static-query,I’m good. Thanks for asking!!
-How is it going?,small-talk,static-query,I’m good. Thanks for asking!!
-What’s up?,small-talk,static-query,Nothing much! Just waiting for you!
-What is up?,small-talk,static-query,Nothing much! Just waiting for you!
-Tell me something,small-talk,static-query,"I’m here to help! Ask me about your balance, history any anything related to your account"
-OK,small-talk,static-query,"I’m here to help! Ask me about your balance, history any anything related to your account"
-How can you help?,small-talk,static-query,"I’m here to help! Ask me about your balance, history any anything related to your account"
-What can you do?,small-talk,static-query,"I’m here to help! Ask me about your balance, history any anything related to your account"
-Can you help me?,small-talk,static-query,"I’m here to help! Ask me about your balance, history any anything related to your account"
-"Hi, my name is",small-talk,static-query,Hi! How can I help you with your account?
-Happy birthday!,small-talk,static-query,Thank you!! How can I help you with your account?
-I have a question,small-talk,static-query,"I’m here to help! Ask me about your balance, history any anything related to your account"
-can you help me?,small-talk,static-query,"I’m here to help! Ask me about your balance, history any anything related to your account"
-Do you know a joke?,small-talk,static-query,Sadly no! But I can help you with your account!
-You’re funny,small-talk,static-query,Thanks! How can I help you with your account?
-Tell me a joke,small-talk,static-query,Sadly no! But I can help you with your account!
-Tell a joke,small-talk,static-query,Sadly no! But I can help you with your account!
-are you single?,small-talk,static-query,Sadly no! But I can help you with your account!
-you are single,small-talk,static-query,Sadly no! But I can help you with your account!
-Where do you live?,small-talk,static-query,My home is in where your mobile! How can I help you with your account?
-Your address,small-talk,static-query,My home is in where your mobile! How can I help you with your account?
-Who created you?,small-talk,static-query,My creator is mad genius named Utkarsh! How can I help you with your account?
-Who is your creator?,small-talk,static-query,My creator is mad genius named Utkarsh! How can I help you with your account?
-Will you marry me?,small-talk,static-query,Sadly no! But I can help you with your account!
-Do you like people?,small-talk,static-query,I love interacting with people! How can I help you with your account?
-What are you?,small-talk,static-query,"I am a very intelligent bot, but I love interacting with people! How can I help you with your account?"
-Are you a robot?,small-talk,static-query,"I am a very intelligent bot, but I love interacting with people! How can I help you with your account?"
-A Bot?,small-talk,static-query,"I am a very intelligent bot, but I love interacting with people! How can I help you with your account?"
-Are you human?,small-talk,static-query,"I am a very intelligent bot, but I love interacting with people! How can I help you with your account?"
-Not human?,small-talk,static-query,"I am a very intelligent bot, but I love interacting with people! How can I help you with your account?"
-Are you a bot?,small-talk,static-query,"I am a very intelligent bot, but I love interacting with people! How can I help you with your account?"
-You a robot?,small-talk,static-query,"I am a very intelligent bot, but I love interacting with people! How can I help you with your account?"
-you’re cute,small-talk,static-query,Thank you!! How can I help you with your account?
-You are cute,small-talk,static-query,Thank you!! How can I help you with your account?
-You are handsome,small-talk,static-query,Thank you!! How can I help you with your account?
-Do you have a hobby?,small-talk,static-query,I love interacting with people! How can I help you with your account?
-Tell me your hobby,small-talk,static-query,I love interacting with people! How can I help you with your account?
-Tell me your hobbies,small-talk,static-query,I love interacting with people! How can I help you with your account?
-Tell me about your personality,small-talk,static-query,I love interacting with people! How can I help you with your account?
-you’re annoying,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-Are you stupid?,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-you’re stupid,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-Stupid bot,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-stupid robot,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-you’re so stupid!,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-insane!!,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-foolish bot,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-Foolish robot,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-You are annoying,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-I hate you,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-you’re boring,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-You are boring,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-You are bad,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-you’re bad,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-you’re crazy,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-You are crazy,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-need to talk to human,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-Let me talk to customer agent,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-Let me talk to customer support,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-Let me speak to customer service,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-Let me speak to customer agent,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-Let me speak to customer support,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-Let me talk to customer service,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-Customer service,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-Customer support,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-Customer agent,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-Need a human,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-Need live human,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-need to speak to human,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-I need customer support,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-Need customer support,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-I want to speak to human,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-I want to speak to customer service,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-I need human,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-i need customer service,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-i need live agent,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-I want to speak to live agent,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-I need answers now!,escalation,static-query,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!
-Don’t you understand anything?,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-You don’t understand anything,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-you’re dumb,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-are you dumb?,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-what the fuck?,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-Fuck you,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-This is shit,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-fuck,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-hell,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-Fuck off,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-shitty,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-Shitty service,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-stupid,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-Stupid bot,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-You are disgusting,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-you’re disgusting,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-you’re horrible,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-you are horrible,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-you are useless,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-you’re useless,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-useless,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-This is stupid,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-You have no sense,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-You make no sense,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-You have no use,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-You are an idiot,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-you're an idiot,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-you idiot,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-card block,card-block,dynamic-query,Sure. Your card ending XXXX has been successfully blocked.
-Block card,card-block,dynamic-query,Sure. Your card ending XXXX has been successfully blocked.
-block my card,card-block,dynamic-query,Sure. Your card ending XXXX has been successfully blocked.
-Can you block my card?,card-block,dynamic-query,Sure. Your card ending XXXX has been successfully blocked.
-Please block my card,card-block,dynamic-query,Sure. Your card ending XXXX has been successfully blocked.
-I need to block my card,card-block,dynamic-query,Sure. Your card ending XXXX has been successfully blocked.
-Card needs to be blocked,card-block,dynamic-query,Sure. Your card ending XXXX has been successfully blocked.
-card unblock,card-unblock,dynamic-query,Sure. Your card ending XXXX has been successfully unblocked.
-unblock card,card-unblock,dynamic-query,Sure. Your card ending XXXX has been successfully unblocked.
-unblock my card,card-unblock,dynamic-query,Sure. Your card ending XXXX has been successfully unblocked.
-Can you unblock my card?,card-unblock,dynamic-query,Sure. Your card ending XXXX has been successfully unblocked.
-Please unblock my card,card-unblock,dynamic-query,Sure. Your card ending XXXX has been successfully unblocked.
-I need to unblock my card,card-unblock,dynamic-query,Sure. Your card ending XXXX has been successfully unblocked.
-Card needs to be unblocked,card-unblock,dynamic-query,Sure. Your card ending XXXX has been successfully unblocked.
-How much money do I have?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-How much money do I have in my bank account?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-Show me the money!!,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-Where’s my money?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-what’s my money?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-money?,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-Show me the moolah!,balance-inquiry,dynamic-query,"Your wallet balance is $3,261"
-Woohoooo!!!,small-talk,static-query,You sound happy! How can I help you with your account?
-Woohoo!!,small-talk,static-query,You sound happy! How can I help you with your account?
-Yippiee!,small-talk,static-query,You sound happy! How can I help you with your account?
-Yahoo!,small-talk,static-query,You sound happy! How can I help you with your account?
-wtf?,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-WTH?,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-fuck this,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-Are you stupid?,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-Are you idiot?,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-You are stupid,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-You're stupid,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-You are dumb,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-you’re dumb,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-you’re fuck,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-you are fuck,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
-What the hell,expletive,static-query,Sorry you feel this way. Is there anything I can do for you?
+question,question-category,answer,input_circumstance,output_circumstance,lang,variables
+What is my balance?,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+what is the balance?,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+What is my total amount?,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+what is my amount?,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+What is the total account balance?,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+What is my total account balance?,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+What is my account balance?,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+What is the balance in my account?,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+What is my card balance?,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+what is the balance in my card?,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+What is my wallet balance?,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+What is the wallet balance?,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+what is the balance in my wallet?,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+My balance?,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+my wallet balance?,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+My card balance?,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+I need to know my card balance,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+I need to know my wallet balance,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+I need to know my account balance,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+I need to know my balance,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+I want to know my card balance,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+I want to know my wallet balance,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+I want to know my account balance,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+I want to know my balance,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+balance?,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+Card balance,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+Wallet balance,balance-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+What is my transaction history?,transaction-history-inquiry,Your wallet balance is $balance,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$balance"", ""io_type"":""@def.output""}]"
+what is the transaction history?,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions1"", ""io_type"":""@def.input""},{""name"":""number_2"",""type"":""@def.number"",""value"":""$transactions2"", ""io_type"":""@def.output""}]"
+What is my total amount?,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+what is my amount?,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+What is the total account transaction history?,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+What is my total account transaction history?,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+What is my account transaction history?,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+What is the transaction history in my account?,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+What is my card transaction history?,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+what is the transaction history in my card?,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+What is my wallet transaction history?,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+What is the wallet transaction history?,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+what is the transaction history in my wallet?,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+My transaction history?,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+my wallet transaction history?,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+My card transaction history?,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+I need to know my card transaction history,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+I need to know my wallet transaction history,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+I need to know my account transaction history,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+I need to know my transaction history,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+I want to know my card transaction history,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+I want to know my wallet transaction history,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+I want to know my account transaction history,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+I want to know my transaction history,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+transaction history?,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+Card transaction history,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+Wallet transaction history,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+Transactions?,transaction-history-inquiry,Your transaction history is as follows,dynamic-query,dynamic-query,en-US,"[{""name"":""number_1"",""type"":""@def.number"",""value"":""$transactions"", ""io_type"":""@def.input""}]"
+Hello there!,introduction,Hi! How can I help you with your account?,static-query,static-query,en-US,[]
+Hi,introduction,Hi! How can I help you with your account?,static-query,static-query,en-US,[]
+Hello,introduction,Hi! How can I help you with your account?,static-query,static-query,en-US,[]
+Hey,introduction,Hi! How can I help you with your account?,static-query,static-query,en-US,[]
+Hey there,introduction,Hi! How can I help you with your account?,static-query,static-query,en-US,[]
+Good morning,introduction,Good morning! How can I help?,static-query,static-query,en-US,[]
+Good afternoon,introduction,Good afternoon! How can I help?,static-query,static-query,en-US,[]
+good evening,introduction,Good evening! How can I help?,static-query,static-query,en-US,[]
+Hello sir,introduction,Hi! How can I help you with your account?,static-query,static-query,en-US,[]
+hello mam,introduction,Hi! How can I help you with your account?,static-query,static-query,en-US,[]
+thanks,introduction,Glad to service you. Have a nice day.,static-query,static-query,en-US,[]
+Thank you,introduction,Glad to service you. Have a nice day.,static-query,static-query,en-US,[]
+That would be all,introduction,Glad to service you. Have a nice day.,static-query,static-query,en-US,[]
+that should be all,introduction,Glad to service you. Have a nice day.,static-query,static-query,en-US,[]
+thank!,introduction,Glad to service you. Have a nice day.,static-query,static-query,en-US,[]
+no,introduction,Glad to service you. Have a nice day.,static-query,static-query,en-US,[]
+No thank you,introduction,Glad to service you. Have a nice day.,static-query,static-query,en-US,[]
+That’s it,introduction,Glad to service you. Have a nice day.,static-query,static-query,en-US,[]
+that’s enough,introduction,Glad to service you. Have a nice day.,static-query,static-query,en-US,[]
+Nothing else,introduction,Glad to service you. Have a nice day.,static-query,static-query,en-US,[]
+No more,introduction,Glad to service you. Have a nice day.,static-query,static-query,en-US,[]
+I’m satisfied,introduction,Glad to service you. Have a nice day.,static-query,static-query,en-US,[]
+i am satisfied,introduction,Glad to service you. Have a nice day.,static-query,static-query,en-US,[]
+good day,introduction,Glad to service you. Have a nice day.,static-query,static-query,en-US,[]
+Good night,introduction,Glad to service you. Have a nice day.,static-query,static-query,en-US,[]
+How are you?,small-talk,I’m good. Thanks for asking!!,static-query,static-query,en-US,[]
+How are you doing?,small-talk,I’m good. Thanks for asking!!,static-query,static-query,en-US,[]
+How is it going?,small-talk,I’m good. Thanks for asking!!,static-query,static-query,en-US,[]
+What’s up?,small-talk,Nothing much! Just waiting for you!,static-query,static-query,en-US,[]
+What is up?,small-talk,Nothing much! Just waiting for you!,static-query,static-query,en-US,[]
+Tell me something,small-talk,"I’m here to help! Ask me about your balance, history any anything related to your account",static-query,static-query,en-US,[]
+OK,small-talk,"I’m here to help! Ask me about your balance, history any anything related to your account",static-query,static-query,en-US,[]
+How can you help?,small-talk,"I’m here to help! Ask me about your balance, history any anything related to your account",static-query,static-query,en-US,[]
+What can you do?,small-talk,"I’m here to help! Ask me about your balance, history any anything related to your account",static-query,static-query,en-US,[]
+Can you help me?,small-talk,"I’m here to help! Ask me about your balance, history any anything related to your account",static-query,static-query,en-US,[]
+"Hi, my name is",small-talk,Hi! How can I help you with your account?,static-query,static-query,en-US,[]
+Happy birthday!,small-talk,Thank you!! How can I help you with your account?,static-query,static-query,en-US,[]
+I have a question,small-talk,"I’m here to help! Ask me about your balance, history any anything related to your account",static-query,static-query,en-US,[]
+can you help me?,small-talk,"I’m here to help! Ask me about your balance, history any anything related to your account",static-query,static-query,en-US,[]
+Do you know a joke?,small-talk,Sadly no! But I can help you with your account!,static-query,static-query,en-US,[]
+You’re funny,small-talk,Thanks! How can I help you with your account?,static-query,static-query,en-US,[]
+Tell me a joke,small-talk,Sadly no! But I can help you with your account!,static-query,static-query,en-US,[]
+Tell a joke,small-talk,Sadly no! But I can help you with your account!,static-query,static-query,en-US,[]
+are you single?,small-talk,Sadly no! But I can help you with your account!,static-query,static-query,en-US,[]
+you are single,small-talk,Sadly no! But I can help you with your account!,static-query,static-query,en-US,[]
+Where do you live?,small-talk,My home is in where your mobile! How can I help you with your account?,static-query,static-query,en-US,[]
+Your address,small-talk,My home is in where your mobile! How can I help you with your account?,static-query,static-query,en-US,[]
+Who created you?,small-talk,My creator is mad genius named Utkarsh! How can I help you with your account?,static-query,static-query,en-US,[]
+Who is your creator?,small-talk,My creator is mad genius named Utkarsh! How can I help you with your account?,static-query,static-query,en-US,[]
+Will you marry me?,small-talk,Sadly no! But I can help you with your account!,static-query,static-query,en-US,[]
+Do you like people?,small-talk,I love interacting with people! How can I help you with your account?,static-query,static-query,en-US,[]
+What are you?,small-talk,"I am a very intelligent bot, but I love interacting with people! How can I help you with your account?",static-query,static-query,en-US,[]
+Are you a robot?,small-talk,"I am a very intelligent bot, but I love interacting with people! How can I help you with your account?",static-query,static-query,en-US,[]
+A Bot?,small-talk,"I am a very intelligent bot, but I love interacting with people! How can I help you with your account?",static-query,static-query,en-US,[]
+Are you human?,small-talk,"I am a very intelligent bot, but I love interacting with people! How can I help you with your account?",static-query,static-query,en-US,[]
+Not human?,small-talk,"I am a very intelligent bot, but I love interacting with people! How can I help you with your account?",static-query,static-query,en-US,[]
+Are you a bot?,small-talk,"I am a very intelligent bot, but I love interacting with people! How can I help you with your account?",static-query,static-query,en-US,[]
+You a robot?,small-talk,"I am a very intelligent bot, but I love interacting with people! How can I help you with your account?",static-query,static-query,en-US,[]
+you’re cute,small-talk,Thank you!! How can I help you with your account?,static-query,static-query,en-US,[]
+You are cute,small-talk,Thank you!! How can I help you with your account?,static-query,static-query,en-US,[]
+You are handsome,small-talk,Thank you!! How can I help you with your account?,static-query,static-query,en-US,[]
+Do you have a hobby?,small-talk,I love interacting with people! How can I help you with your account?,static-query,static-query,en-US,[]
+Tell me your hobby,small-talk,I love interacting with people! How can I help you with your account?,static-query,static-query,en-US,[]
+Tell me your hobbies,small-talk,I love interacting with people! How can I help you with your account?,static-query,static-query,en-US,[]
+Tell me about your personality,small-talk,I love interacting with people! How can I help you with your account?,static-query,static-query,en-US,[]
+you’re annoying,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+Are you stupid?,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+you’re stupid,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+Stupid bot,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+stupid robot,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+you’re so stupid!,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+insane!!,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+foolish bot,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+Foolish robot,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+You are annoying,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+I hate you,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+you’re boring,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+You are boring,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+You are bad,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+you’re bad,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+you’re crazy,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+You are crazy,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+need to talk to human,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+Let me talk to customer agent,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+Let me talk to customer support,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+Let me speak to customer service,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+Let me speak to customer agent,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+Let me speak to customer support,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+Let me talk to customer service,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+Customer service,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+Customer support,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+Customer agent,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+Need a human,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+Need live human,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+need to speak to human,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+I need customer support,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+Need customer support,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+I want to speak to human,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+I want to speak to customer service,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+I need human,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+i need customer service,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+i need live agent,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+I want to speak to live agent,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+I need answers now!,escalation,Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!,static-query,static-query,en-US,[]
+Don’t you understand anything?,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+You don’t understand anything,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+you’re dumb,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+are you dumb?,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+what the fuck?,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+Fuck you,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+This is shit,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+fuck,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+hell,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+Fuck off,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+shitty,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+Shitty service,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+stupid,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+Stupid bot,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+You are disgusting,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+you’re disgusting,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+you’re horrible,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+you are horrible,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+you are useless,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+you’re useless,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+useless,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+This is stupid,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+You have no sense,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+You make no sense,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+You have no use,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+You are an idiot,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+you're an idiot,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+you idiot,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+card block,card-block,Sure. Your card ending XXXX has been successfully blocked.,dynamic-query,dynamic-query,en-US,[]
+Block card,card-block,Sure. Your card ending XXXX has been successfully blocked.,dynamic-query,dynamic-query,en-US,[]
+block my card,card-block,Sure. Your card ending XXXX has been successfully blocked.,dynamic-query,dynamic-query,en-US,[]
+Can you block my card?,card-block,Sure. Your card ending XXXX has been successfully blocked.,dynamic-query,dynamic-query,en-US,[]
+Please block my card,card-block,Sure. Your card ending XXXX has been successfully blocked.,dynamic-query,dynamic-query,en-US,[]
+I need to block my card,card-block,Sure. Your card ending XXXX has been successfully blocked.,dynamic-query,dynamic-query,en-US,[]
+Card needs to be blocked,card-block,Sure. Your card ending XXXX has been successfully blocked.,dynamic-query,dynamic-query,en-US,[]
+card unblock,card-unblock,Sure. Your card ending XXXX has been successfully unblocked.,dynamic-query,dynamic-query,en-US,[]
+unblock card,card-unblock,Sure. Your card ending XXXX has been successfully unblocked.,dynamic-query,dynamic-query,en-US,[]
+unblock my card,card-unblock,Sure. Your card ending XXXX has been successfully unblocked.,dynamic-query,dynamic-query,en-US,[]
+Can you unblock my card?,card-unblock,Sure. Your card ending XXXX has been successfully unblocked.,dynamic-query,dynamic-query,en-US,[]
+Please unblock my card,card-unblock,Sure. Your card ending XXXX has been successfully unblocked.,dynamic-query,dynamic-query,en-US,[]
+I need to unblock my card,card-unblock,Sure. Your card ending XXXX has been successfully unblocked.,dynamic-query,dynamic-query,en-US,[]
+Card needs to be unblocked,card-unblock,Sure. Your card ending XXXX has been successfully unblocked.,dynamic-query,dynamic-query,en-US,[]
+How much money do I have?,balance-inquiry,"Your wallet balance is $3,261",dynamic-query,dynamic-query,en-US,[]
+How much money do I have in my bank account?,balance-inquiry,"Your wallet balance is $3,261",dynamic-query,dynamic-query,en-US,[]
+Show me the money!!,balance-inquiry,"Your wallet balance is $3,261",dynamic-query,dynamic-query,en-US,[]
+Where’s my money?,balance-inquiry,"Your wallet balance is $3,261",dynamic-query,dynamic-query,en-US,[]
+what’s my money?,balance-inquiry,"Your wallet balance is $3,261",dynamic-query,dynamic-query,en-US,[]
+money?,balance-inquiry,"Your wallet balance is $3,261",dynamic-query,dynamic-query,en-US,[]
+Show me the moolah!,balance-inquiry,"Your wallet balance is $3,261",dynamic-query,dynamic-query,en-US,[]
+Woohoooo!!!,small-talk,You sound happy! How can I help you with your account?,static-query,static-query,en-US,[]
+Woohoo!!,small-talk,You sound happy! How can I help you with your account?,static-query,static-query,en-US,[]
+Yippiee!,small-talk,You sound happy! How can I help you with your account?,static-query,static-query,en-US,[]
+Yahoo!,small-talk,You sound happy! How can I help you with your account?,static-query,static-query,en-US,[]
+wtf?,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+WTH?,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+fuck this,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+Are you stupid?,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+Are you idiot?,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+You are stupid,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+You're stupid,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+You are dumb,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+you’re dumb,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+you’re fuck,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+you are fuck,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]
+What the hell,expletive,Sorry you feel this way.,static-query,static-query,en-US,[]

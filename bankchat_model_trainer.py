@@ -18,7 +18,7 @@ Created on Sun Sep 15 10:56:19 2019
     RECOMMENDATION: change the filename when you change the model
 """
 
-from modules.response_predictor import Predictor
+from modules.predictor import Predictor
 from modules.nlp_query_parser.vector_type import VectorType
 from modules.nlp_query_parser.model_selection.model_type import ModelType
 import pickle
@@ -36,7 +36,7 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 
 #training file location
-train_file_location = 'modules/data/' + config['data']['train-file-name']
+train_file_location = 'modules/data/' + config['mongo-data']['mongo_train_fileName']
 
 #dependent columns
 col_questions = config['data']['ques-col']
@@ -51,7 +51,7 @@ col_answers_numeric = col_answers + "_numeric"
 col_answers_category_numeric = col_answers_category + "_numeric"
 col_questions_category_numeric = col_questions_category + "_numeric"
 
-predictor = Predictor(VectorType.TFIDF, ModelType.LOGISTIC, train_file_location, col_answers, col_answers_category, col_questions, col_questions_category)
+predictor = Predictor(VectorType.TFIDF, ModelType.LOGISTIC, train_file_location)
 
 data = predictor.read_train_data()
 data = predictor.preprocess_data(data)
