@@ -46,15 +46,15 @@ class ClassifierInstance:
     """
     @description : getter for the model class
     """
+
     def get_model(self):
-        print(self.model)
         return self.model
 
     """
     @description : getter for the vector class
     """
+
     def get_vector(self):
-        print(self.vector)
         return self.vector
 
     """
@@ -64,6 +64,7 @@ class ClassifierInstance:
     else if numeric_category is < 0, appropriate responses are returned
     # TODO : add system generated intent for unclassifiable queries
     """
+
     def __extract_value_from_train_data(self, lang, numeric_category, column_name):
 
         if numeric_category != -1:
@@ -71,7 +72,7 @@ class ClassifierInstance:
                                       (self.unique_train_df[self.col_category_numeric] == numeric_category)]
             response = None
             if (df is not None) and (df.shape[0] == 1):
-                response = df[column_name]
+                response = df[column_name].to_numpy()[0]
             else:
                 response = None
 
@@ -155,13 +156,8 @@ class ClassifierInstance:
     """
 
     def predict(self, lang, query):
-        print('query received by ClassifierInstance')
         X_pred = self.__vectorize_data([query])
-        print("-------------")
-        print(X_pred)
         y_pred = self.model.predict(X_pred)
-        print(self.model.decision_function(X_pred))
-        print("predicted value is - {0}".format(y_pred[0]))
 
         """
         if the function requires a decision boundary, then use the given boundary, else let prediction return a reaction
@@ -176,5 +172,25 @@ class ClassifierInstance:
                 response = self.query_response(lang, y_pred[0])
         else:
             response = self.query_response(lang, y_pred[0])
+
+        return response
+
+    def predict_category(self, lang, query):
+        X_pred = self.__vectorize_data([query])
+        y_pred = self.model.predict(X_pred)
+
+        """
+        if the function requires a decision boundary, then use the given boundary, else let prediction return a reaction
+        """
+        if self.use_decision_function:
+            if np.amax(self.model.decision_function(X_pred)) < self.decision_boundary:
+                numeric_category = -1
+                response = "I'm not sure I understood your question"
+                # At this point of time, bot should save the question
+
+            else:
+                response = y_pred[0]
+        else:
+            response = y_pred[0]
 
         return response

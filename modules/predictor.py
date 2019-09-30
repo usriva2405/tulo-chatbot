@@ -38,13 +38,12 @@ config.read('config.ini')
 
 
 class Predictor:
-
     """
     This function defines the columns for prediction
     This also defines the language dictionary to be used for prediction models.
     """
-    def __init__(self, vector_type, model_type, train_file_location):
 
+    def __init__(self, vector_type, model_type, train_file_location):
         # training file location
         self.train_file_location = train_file_location
 
@@ -86,47 +85,29 @@ class Predictor:
     @description : this method is used for setting up the training data.
     call all relevant methods which require to be pipelined in this method.
     """
-    def setup_train_data(self):
 
+    def setup_train_data(self):
         self.__read_train_data()
         self.train_df = self.preprocess_data(self.train_df)
         self.train_df = self.encode_target_label(self.train_df, self.col_category, self.col_category_numeric)
         self.__define_unique_df()
-
 
     def __read_train_data(self):
         self.train_df = pd.read_csv(self.train_file_location)
         return self.train_df
 
     """
-    @description : this method is used for preprocessing the data. incase if no preprocessing is required, ignore it.
-    
-    Reason it does not deal with class variables and instead works with instance variables is to improve flexibility.
-    """
-    def preprocess_data(self, data):
-        return data
-
-    """
-    @description : this method encodes the target variable category.
-    
-    Reason it does not deal with class variables and instead works with instance variables is to improve flexibility.
-    """
-    def encode_target_label(self, data, column_name, column_name_numeric):
-        labelEncoder = LabelEncoder()
-        data[column_name_numeric] = labelEncoder.fit_transform(data[column_name])
-        return data
-
-    """
     @description : this method creates a unique classification set, which can be used later.
     """
+
     def __define_unique_df(self):
         self.unique_train_df = self.train_df.drop(columns=[self.col_query], axis=1).drop_duplicates()
 
     """
     @description : This prepares the training and test split
     """
-    def __split_data(self):
 
+    def __split_data(self):
         X = self.train_df[self.col_query].values
         y = self.train_df[self.col_category_numeric].values
         print('split_data')
@@ -140,7 +121,9 @@ class Predictor:
 
     """
     @description : This is to vectorize the training data and validation data
+    :return: X_train_vect, y_train, X_test_vect, y_test
     """
+
     def __vectorize_train_test(self):
         self.__split_data()
 
@@ -166,9 +149,34 @@ class Predictor:
     """
     @description : private method to fetch instance of classifier
     """
-    def __get_classifier_instance(self, use_decision_function, decision_boundary):
-        return ClassifierInstance(self.unique_train_df, self.model, self.vector, use_decision_function, decision_boundary)
 
+    def __get_classifier_instance(self, use_decision_function, decision_boundary):
+        return ClassifierInstance(self.unique_train_df, self.model, self.vector, use_decision_function,
+                                  decision_boundary)
+
+    """
+    @description : this method is used for preprocessing the data. incase if no preprocessing is required, ignore it.
+
+    Reason it does not deal with class variables and instead works with instance variables is to improve flexibility.
+    """
+
+    def preprocess_data(self, data):
+        return data
+
+    """
+    @description : this method encodes the target variable category.
+
+    Reason it does not deal with class variables and instead works with instance variables is to improve flexibility.
+    """
+
+    def encode_target_label(self, data, column_name, column_name_numeric):
+        labelEncoder = LabelEncoder()
+        data[column_name_numeric] = labelEncoder.fit_transform(data[column_name])
+        return data
+
+    """
+    @description : this method is ultimately called for fitting the model on training data
+    """
     def fit_train_test(self, use_decision_function, decision_boundary):
         print('--------------------------------------------------------------------------------')
         self.model = model_factory.get_model(self.model_type)
