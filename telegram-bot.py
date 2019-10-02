@@ -1,30 +1,31 @@
-from telegram import (ReplyKeyboardMarkup, ReplyKeyboardRemove)
-from telegram.ext import (Updater, CommandHandler, InlineQueryHandler, MessageHandler, Filters,
+import configparser
+import json
+import logging
+import os
+import re
+import sys
+
+from telegram import (ReplyKeyboardRemove)
+from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters,
                           ConversationHandler)
 
-import requests
-import re
-import logging
-import configparser
-
-import sys, os
 sys.path.insert(0, os.path.abspath('..'))
 
 # Custom Modules
-from bankchat_app import BankApp
-
+from modules.services.chat_service import ChatService
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 
 logger = logging.getLogger(__name__)
-bankchat_app = BankApp()
+bankchat_app = ChatService()
 
 QUERY, CANCEL = range(2)
 
+
 def initialize():
-    bankchat_app = BankApp()
+    chat_service = ChatService()
 
 
 def start(update, context):
@@ -32,15 +33,18 @@ def start(update, context):
     update.message.reply_text(
         'Hi {0}! I am your bank bot. '
         'Send /cancel to stop talking to me.\n\n'
-        'How can I help you regarding your account?' 
+        'How can I help you regarding your account?'
         '\nBalance? History? Card Block? Anything else?'.format(user.first_name))
-    
+
     return QUERY
 
+
 def closing_statement(text):
-    closing_words = re.compile("thank|Thank|no|No|thats|Thats|Thanks") 
-    if closing_words.search(text): return True
-    else: return False
+    closing_words = re.compile("thank|Thank|no|No|thats|Thats|Thanks")
+    if closing_words.search(text):
+        return True
+    else:
+        return False
 
 
 def query(update, context):
@@ -48,31 +52,40 @@ def query(update, context):
     text = update.message.text
     if closing_statement(text) == True:
         logger.info("closing_statement = true %s: %s", user.first_name, update.message.text)
-        #answer, answer_cat, question_cat = bankchat_app.predict_answer(text)
-        answer = bankchat_app.predict_answer(text)
+        # answer, answer_cat, question_cat = bankchat_app.predict_answer(text)
+        answer = bankchat_app.predict_response("en-US", text)
         update.message.reply_text(answer)
         return CANCEL
     else:
-        #predict resposne
-        #answer, answer_cat, question_cat = bankchat_app.predict_answer(text)
-        answer = bankchat_app.predict_answer(text)
-        answer_category = bankchat_app.predict_answer_category(text)
-        question_category = bankchat_app.predict_question_category(text)
+        # predict response
+        answer = bankchat_app.predict_response("en-US", text)
         logger.info('************************')
         logger.info('Prediction given by model')
         logger.info('************************')
         logger.info("answer : {0}".format(answer))
-        logger.info("answer category : {0}".format(answer_category))
-        logger.info("ques category : {0}".format(question_category))
-        
-        
-        response = answer + '\n\n Can I help you with anything else?'
-        
+
+        # response = answer + '\n\n Can I help you with anything else?'
+
         logger.info("Query %s: %s", user.first_name, update.message.text)
-        update.message.reply_text(response)
-    
+
+        update.message.reply_text(extract_response(answer))
+
         return QUERY
-    
+
+
+def extract_response(answer):
+    print("extracting response... :")
+    # get response element, remove the opening and closing [], and replace ' with ", so that it is convertible to json
+    if answer is not None:
+        try:
+            response_str = str(answer.get("response"))[1:-1].replace("'", '"')
+            response = json.loads(response_str).get("text")
+        except Exception as e:
+            logger.error(e)
+            response = "I think your query broke me. Try after some time!!"
+    return response
+
+
 def cancel(update, context):
     user = update.message.from_user
     logger.info("User %s canceled the conversation.", user.first_name)
@@ -81,21 +94,19 @@ def cancel(update, context):
 
     return ConversationHandler.END
 
-    
+
 def error(update, context):
     """Log Errors caused by Updates."""
     logger.warning('Update "%s" caused error "%s"', update, context.error)
 
 
-
 def main():
-    
     initialize();
     # Read telegram token from config
     config = configparser.ConfigParser()
     config.read('config.ini')
     telegram_token = config['telegram']['telegram-token']
-    #telegram_token = config['telegram-token']
+    # telegram_token = config['telegram-token']
     # Create the Updater and pass it your bot's token.
     # Make sure to set use_context=True to use the new context based callbacks
     # Post version 12 this will no longer be necessary
@@ -115,12 +126,10 @@ def main():
     dp.add_handler(conv_handler)
     # log all errors
     dp.add_error_handler(error)
-    
+
     updater.start_polling()
     updater.idle()
 
 
-
 if __name__ == '__main__':
-
     main()

@@ -1,0 +1,40 @@
+# setup database
+use tulo_train
+
+# setting up collection
+db.createCollection("train")
+
+# import database
+mongoimport --db tulo_train --collection train --file train-dataset.json
+mongoimport -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -c train -u heroku_2r6cnrs1 -p os02s46gjpp2b0mio9qa4o3g8g --file train-dataset.json
+
+# export database
+mongoexport --db tulo_train -c train --out train-dataset.json
+mongoexport -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -c train -u heroku_2r6cnrs1 -p os02s46gjpp2b0mio9qa4o3g8g -o train-dataset.json
+
+# For updating a category response :
+db.train.update({"category" : "introduction"}, {$set : {"response.0.text": [ "Hi! How can I help you with your account?", "Hey there! tell me!", "How can I help?" ]}})
+
+
+heroku addons:create mongolab
+heroku addons:docs mongolab
+heroku config:get MONGODB_URI
+heroku addons:open mongolab
+
+# mongo URI and credentials
+mongodb://heroku_2r6cnrs1:os02s46gjpp2b0mio9qa4o3g8g@ds229078.mlab.com:29078/heroku_2r6cnrs1
+user : heroku_2r6cnrs1
+password : os02s46gjpp2b0mio9qa4o3g8g
+host : ds229078.mlab.com
+port : 29078
+dbname : heroku_2r6cnrs1
+
+# connect via mongo shell
+mongo ds229078.mlab.com:29078/heroku_2r6cnrs1 -u heroku_2r6cnrs1 -p os02s46gjpp2b0mio9qa4o3g8g
+
+
+# to run python scripts on heroku
+this starts at /app folder by default : heroku run python
+check list of files in current folder :
+import os
+os.listdir()
