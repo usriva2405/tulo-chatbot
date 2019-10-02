@@ -70,7 +70,8 @@ class ClassifierInstance:
     """
 
     def __extract_value_from_train_data(self, lang, numeric_category, column_name):
-
+        logger.info("__extract_value_from_train_data__")
+        logger.info(self.unique_train_df.head(1))
         if numeric_category != -1:
             df = self.unique_train_df[(self.unique_train_df[self.col_lang] == lang) &
                                       (self.unique_train_df[self.col_category_numeric] == numeric_category)]
