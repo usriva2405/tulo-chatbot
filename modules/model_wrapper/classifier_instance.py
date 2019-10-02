@@ -15,6 +15,8 @@ import logging
 import json
 
 # Setup Logging
+from modules.utils import utility_functions
+
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -89,6 +91,7 @@ class ClassifierInstance:
     def extract_response(self, lang, numeric_category):
         return self.__extract_value_from_train_data(lang, numeric_category, self.col_response)
 
+
     """
     @description : this method will select random response from the given responses and prepare a list of responses
     """
@@ -96,17 +99,58 @@ class ClassifierInstance:
     def get_final_response_list(self, lang, numeric_category):
         # TODO - Add this as default system intent for unclassifiable queries : issue#22
         unclassifiable_response = {
-            "response": [{"text": ["I'm not sure I understood", "Could you rephrase the query?",
-                                   "I'm sorry I cannot help with this"], "custom": ""}]
+            "response": [{"text": ["I am not sure I understood", "Could you rephrase the query?",
+                                   "I am sorry I cannot help with this"], "custom": ""}]
         }
 
         # TODO - extract response from json and send appropriate randomized response
         if numeric_category != -1:
-            response = self.extract_response(lang, numeric_category)
+            response_list = self.extract_response(lang, numeric_category)
         else:
-            response = self.extract_response(lang, numeric_category)
+            response_list = unclassifiable_response.get("response")
 
-        return response
+        if response_list is not None:
+            try:
+                logger.info("response_list type : {0}".format(type(response_list)))
+                if type(response_list) == str:
+                    response_list = str(response_list).replace("'", '"')
+                    response_list = json.loads(response_list)
+                # get response, replace ' with ", so that it is convertible to json
+                logger.info("response_list : {0}".format(response_list))
+
+                # response could be a list of responses, so we should prepare a list of filtered responses and use it
+                replies = []
+                for response in response_list:
+                    logger.info("inside response_list array loop")
+                    response = str(response).replace("'", '"')
+                    logger.info("response : {0}".format(response))
+                    if response is not None:
+                        response_json = json.loads(response)
+                    # response json text element is a list of possible responses.
+                    # Use a random index to get random response
+                    index = utility_functions.get_random_number(len(response_json.get("text"))-1)
+                    logger.info("index value : {0}".format(index))
+                    text_str = response_json.get("text")[index]
+                    logger.info("text_str : {0}".format(text_str))
+                    custom_json_str = response_json.get("custom")
+                    logger.info("custom_json_str : {0}".format(custom_json_str))
+                    reply = {
+                        "text" : text_str,
+                        "custom" : custom_json_str
+                    }
+                    replies.append(reply)
+
+            except Exception as e:
+                logger.error(e)
+                reply = {
+                    "text": "I think you broke me. Try after some time!",
+                    "custom": ""
+                }
+                replies.append(reply)
+
+            # prepare a dictionary of responses
+
+        return replies
 
     """
     @description : this method extracts the relevant response wrt category numeric value
@@ -163,15 +207,18 @@ class ClassifierInstance:
         if the function requires a decision boundary, then use the given boundary, else let prediction return a reaction
         """
         if self.use_decision_function:
+            logger.info("decision_function : {0}".format(np.amax(self.model.decision_function(X_pred))))
+            logger.info("decision_boundary : {0}".format(self.decision_boundary))
             if np.amax(self.model.decision_function(X_pred)) < self.decision_boundary:
                 numeric_category = -1
-                response = "I'm not sure I understood your question"
                 # At this point of time, bot should save the question
 
             else:
-                response = self.query_response(lang, y_pred[0])
+                numeric_category = y_pred[0]
         else:
-            response = self.query_response(lang, y_pred[0])
+            numeric_category = y_pred[0]
+
+        response = self.query_response(lang, numeric_category)
 
         return response
 
@@ -185,7 +232,7 @@ class ClassifierInstance:
         if self.use_decision_function:
             if np.amax(self.model.decision_function(X_pred)) < self.decision_boundary:
                 numeric_category = -1
-                response = "I'm not sure I understood your question"
+                response = numeric_category
                 # At this point of time, bot should save the question
 
             else:

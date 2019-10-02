@@ -6,15 +6,13 @@ Created on Tue Sep 17 23:02:04 2019
 @author: usrivastava
 """
 
-from flask import Flask, request, jsonify, json
-import sys
+from flask import Flask, request, json
 import logging
 
-from bankchat_app import BankApp
-from modules.response_wrapper.query_response import QueryResponse
+from modules.services.chat_service import ChatService
 
 app = Flask(__name__)
-bankchat_app = BankApp()
+bankchat_app = ChatService()
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',

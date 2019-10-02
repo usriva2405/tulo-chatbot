@@ -12,20 +12,20 @@ from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters,
 sys.path.insert(0, os.path.abspath('..'))
 
 # Custom Modules
-from bankchat_app import BankApp
+from modules.services.chat_service import ChatService
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 
 logger = logging.getLogger(__name__)
-bankchat_app = BankApp()
+bankchat_app = ChatService()
 
 QUERY, CANCEL = range(2)
 
 
 def initialize():
-    bankchat_app = BankApp()
+    chat_service = ChatService()
 
 
 def start(update, context):
@@ -69,7 +69,6 @@ def query(update, context):
         logger.info("Query %s: %s", user.first_name, update.message.text)
 
         update.message.reply_text(extract_response(answer))
-        update.message.reply_text("this si test")
 
         return QUERY
 
@@ -79,11 +78,10 @@ def extract_response(answer):
     # get response element, remove the opening and closing [], and replace ' with ", so that it is convertible to json
     if answer is not None:
         try:
-            response_str = answer.get("response")[1:-1].replace("'", '"')
-            response = json.loads(response_str).get("text")[0]
+            response_str = str(answer.get("response"))[1:-1].replace("'", '"')
+            response = json.loads(response_str).get("text")
         except Exception as e:
             logger.error(e)
-        finally:
             response = "I think your query broke me. Try after some time!!"
     return response
 

@@ -1,0 +1,23 @@
+Binary
+Import database
+mongorestore -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -c train -u heroku_2r6cnrs1 -p os02s46gjpp2b0mio9qa4o3g8g <input db directory>
+Export database
+mongodump -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -u <user> -p <password> -o <output directory>
+Import collection
+mongorestore -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -u <user> -p <password> <input .bson file>
+Export collection
+mongodump -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -c <collection> -u <user> -p <password> -o <output directory>
+
+
+JSON
+Import collection
+mongoimport -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -c <collection> -u <user> -p <password> --file <input file>
+Export collection
+mongoexport -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -c <collection> -u <user> -p <password> -o <output file>
+
+
+CSV
+Import collection
+mongoimport -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -c <collection> -u <user> -p <password> --file <input .csv file> --type csv --headerline
+Export collection
+mongoexport -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -c <collection> -u <user> -p <password> -o <output .csv file> --csv -f <comma-separated list of field names>

@@ -3,7 +3,7 @@ import pickle
 import os
 
 
-class BankApp:
+class ChatService:
     def __init__(self):
         print(os.getcwd())
         # load the model from disk

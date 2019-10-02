@@ -43,7 +43,7 @@ def setup_model_weights():
 
     # setup training data
     predictor.setup_train_data()
-    response_classifier = predictor.fit_train_test(True, 0.03)
+    response_classifier = predictor.fit_train_test(True, 0.18)
 
     # save the model
     filename = 'modules/saved_models/' + config['model-file-name']['response-classifier']

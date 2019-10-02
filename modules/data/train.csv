@@ -1,225 +1,225 @@
 category,input_circumstance,lang,output_circumstance,query,response,variables
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,What is my balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,what is the balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,What is my total amount?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,what is my amount?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,What is the total account balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,What is my total account balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,What is my account balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,What is the balance in my account?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,What is my card balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,what is the balance in my card?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,What is my wallet balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,What is the wallet balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,what is the balance in my wallet?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,My balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,my wallet balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,My card balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,I need to know my card balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,I need to know my wallet balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,I need to know my account balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,I need to know my balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,I want to know my card balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,I want to know my wallet balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,I want to know my account balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,I want to know my balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,Card balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,Wallet balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,How much money do I have?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,How much money do I have in my bank account?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,Show me the money!!,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,Where’s my money?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,what’s my money?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,money?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-balance-inquiry,balance-inquiry_ip_followup,en-US,balance-inquiry_op_followup,Show me the moolah!,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,What is my transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,what is the transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,What is my total amount?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,what is my amount?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,What is the total account transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,What is my total account transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,What is my account transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,What is the transaction history in my account?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,What is my card transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,what is the transaction history in my card?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,What is my wallet transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,What is the wallet transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,what is the transaction history in my wallet?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,My transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,my wallet transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,My card transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,I need to know my card transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,I need to know my wallet transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,I need to know my account transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,I need to know my transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,I want to know my card transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,I want to know my wallet transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,I want to know my account transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,I want to know my transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,Card transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,Wallet transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-transaction-history-inquiry,transaction-history-inquiry_ip_followup,en-US,transaction-history-inquiry_op_followup,Transactions?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
-introduction,introduction_ip_followup,en-US,introduction_op_followup,Hello there!,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,Hi,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,Hello,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,Hey,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,Hey there,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,Good morning,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,Good afternoon,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,good evening,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,Hello sir,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,hello mam,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,thanks,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,Thank you,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,That would be all,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,that should be all,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,thank!,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,no,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,No thank you,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,That’s it,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,that’s enough,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,Nothing else,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,No more,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,I’m satisfied,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,i am satisfied,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,good day,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-introduction,introduction_ip_followup,en-US,introduction_op_followup,Good night,"[{'text': ['Hi! How can I help you with your account?'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,How are you?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,How are you doing?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,How is it going?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,What’s up?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,What is up?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Tell me something,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,OK,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,How can you help?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,What can you do?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Can you help me?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,"Hi, my name is","[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Happy birthday!,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,I have a question,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,can you help me?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Do you know a joke?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,You’re funny,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Tell me a joke,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Tell a joke,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,are you single?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,you are single,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Where do you live?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Your address,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Who created you?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Who is your creator?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Will you marry me?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Do you like people?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,What are you?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Are you a robot?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,A Bot?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Are you human?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Not human?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Are you a bot?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,You a robot?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,you’re cute,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,You are cute,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,You are handsome,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Do you have a hobby?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Tell me your hobby,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Tell me your hobbies,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Tell me about your personality,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Woohoooo!!!,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Woohoo!!,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Yippiee!,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-small-talk,small-talk_ip_followup,en-US,small-talk_op_followup,Yahoo!,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,you’re annoying,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,Are you stupid?,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,you’re stupid,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,Stupid bot,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,stupid robot,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,you’re so stupid!,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,insane!!,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,foolish bot,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,Foolish robot,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,You are annoying,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,I hate you,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,you’re boring,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,You are boring,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,You are bad,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,you’re bad,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,you’re crazy,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,You are crazy,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,Don’t you understand anything?,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,You don’t understand anything,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,you’re dumb,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,are you dumb?,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,what the fuck?,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,Fuck you,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,This is shit,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,fuck,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,hell,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,Fuck off,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,shitty,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,Shitty service,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,stupid,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,Stupid bot,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,You are disgusting,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,you’re disgusting,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,you’re horrible,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,you are horrible,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,you are useless,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,you’re useless,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,useless,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,This is stupid,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,You have no sense,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,You make no sense,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,You have no use,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,You are an idiot,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,you're an idiot,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,you idiot,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,wtf?,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,WTH?,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,fuck this,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,Are you stupid?,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,Are you idiot?,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,You are stupid,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,You're stupid,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,You are dumb,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,you’re dumb,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,you’re fuck,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,you are fuck,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-expletive,expletive_ip_followup,en-US,expletive_op_followup,What the hell,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,need to talk to human,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,Let me talk to customer agent,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,Let me talk to customer support,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,Let me speak to customer service,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,Let me speak to customer agent,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,Let me speak to customer support,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,Let me talk to customer service,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,Customer service,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,Customer support,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,Customer agent,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,Need a human,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,Need live human,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,need to speak to human,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,I need customer support,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,Need customer support,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,I want to speak to human,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,I want to speak to customer service,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,I need human,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,i need customer service,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,i need live agent,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,I want to speak to live agent,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-escalation,escalation_ip_followup,en-US,escalation_op_followup,I need answers now!,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
-card-block,card-block_ip_followup,en-US,card-block_op_followup,card block,"[{'text': ['Sure. Your card ending XXXX has been successfully blocked.'], 'custom': ''}]",[]
-card-block,card-block_ip_followup,en-US,card-block_op_followup,Block card,"[{'text': ['Sure. Your card ending XXXX has been successfully blocked.'], 'custom': ''}]",[]
-card-block,card-block_ip_followup,en-US,card-block_op_followup,block my card,"[{'text': ['Sure. Your card ending XXXX has been successfully blocked.'], 'custom': ''}]",[]
-card-block,card-block_ip_followup,en-US,card-block_op_followup,Can you block my card?,"[{'text': ['Sure. Your card ending XXXX has been successfully blocked.'], 'custom': ''}]",[]
-card-block,card-block_ip_followup,en-US,card-block_op_followup,Please block my card,"[{'text': ['Sure. Your card ending XXXX has been successfully blocked.'], 'custom': ''}]",[]
-card-block,card-block_ip_followup,en-US,card-block_op_followup,I need to block my card,"[{'text': ['Sure. Your card ending XXXX has been successfully blocked.'], 'custom': ''}]",[]
-card-block,card-block_ip_followup,en-US,card-block_op_followup,Card needs to be blocked,"[{'text': ['Sure. Your card ending XXXX has been successfully blocked.'], 'custom': ''}]",[]
-card-unblock,card-unblock_ip_followup,en-US,card-unblock_op_followup,card unblock,"[{'text': ['Sure. Your card ending XXXX has been successfully unblocked.'], 'custom': ''}]",[]
-card-unblock,card-unblock_ip_followup,en-US,card-unblock_op_followup,unblock card,"[{'text': ['Sure. Your card ending XXXX has been successfully unblocked.'], 'custom': ''}]",[]
-card-unblock,card-unblock_ip_followup,en-US,card-unblock_op_followup,unblock my card,"[{'text': ['Sure. Your card ending XXXX has been successfully unblocked.'], 'custom': ''}]",[]
-card-unblock,card-unblock_ip_followup,en-US,card-unblock_op_followup,Can you unblock my card?,"[{'text': ['Sure. Your card ending XXXX has been successfully unblocked.'], 'custom': ''}]",[]
-card-unblock,card-unblock_ip_followup,en-US,card-unblock_op_followup,Please unblock my card,"[{'text': ['Sure. Your card ending XXXX has been successfully unblocked.'], 'custom': ''}]",[]
-card-unblock,card-unblock_ip_followup,en-US,card-unblock_op_followup,I need to unblock my card,"[{'text': ['Sure. Your card ending XXXX has been successfully unblocked.'], 'custom': ''}]",[]
-card-unblock,card-unblock_ip_followup,en-US,card-unblock_op_followup,Card needs to be unblocked,"[{'text': ['Sure. Your card ending XXXX has been successfully unblocked.'], 'custom': ''}]",[]
+balance-inquiry,dynamic-query,en-US,dynamic-query,What is my balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,what is the balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,What is my total amount?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,what is my amount?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,What is the total account balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,What is my total account balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,What is my account balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,What is the balance in my account?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,What is my card balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,what is the balance in my card?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,What is my wallet balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,What is the wallet balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,what is the balance in my wallet?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,My balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,my wallet balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,My card balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,I need to know my card balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,I need to know my wallet balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,I need to know my account balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,I need to know my balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,I want to know my card balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,I want to know my wallet balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,I want to know my account balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,I want to know my balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,balance?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,Card balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,Wallet balance,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,How much money do I have?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,How much money do I have in my bank account?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,Show me the money!!,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,Where’s my money?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,what’s my money?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,money?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+balance-inquiry,dynamic-query,en-US,dynamic-query,Show me the moolah!,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,What is my transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,what is the transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,What is my total amount?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,what is my amount?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,What is the total account transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,What is my total account transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,What is my account transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,What is the transaction history in my account?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,What is my card transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,what is the transaction history in my card?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,What is my wallet transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,What is the wallet transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,what is the transaction history in my wallet?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,My transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,my wallet transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,My card transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,I need to know my card transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,I need to know my wallet transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,I need to know my account transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,I need to know my transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,I want to know my card transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,I want to know my wallet transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,I want to know my account transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,I want to know my transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,transaction history?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,Card transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,Wallet transaction history,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+transaction-history-inquiry,dynamic-query,en-US,dynamic-query,Transactions?,"[{'text': ['Your wallet balance is $balance'], 'custom': ''}]","[{'name': 'number_1', 'type': '@def.number', 'value': '$balance', 'io_type': '@def.output'}]"
+introduction,static-query,en-US,static-query,Hello there!,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,Hi,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,Hello,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,Hey,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,Hey there,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,Good morning,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,Good afternoon,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,good evening,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,Hello sir,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,hello mam,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,thanks,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,Thank you,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,That would be all,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,that should be all,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,thank!,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,no,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,No thank you,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,That’s it,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,that’s enough,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,Nothing else,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,No more,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,I’m satisfied,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,i am satisfied,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,good day,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+introduction,static-query,en-US,static-query,Good night,"[{'text': ['Hi! How can I help you with your account?', 'Hey there! tell me!', 'How can I help?'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,How are you?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,How are you doing?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,How is it going?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,What’s up?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,What is up?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Tell me something,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,OK,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,How can you help?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,What can you do?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Can you help me?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,"Hi, my name is","[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Happy birthday!,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,I have a question,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,can you help me?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Do you know a joke?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,You’re funny,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Tell me a joke,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Tell a joke,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,are you single?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,you are single,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Where do you live?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Your address,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Who created you?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Who is your creator?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Will you marry me?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Do you like people?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,What are you?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Are you a robot?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,A Bot?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Are you human?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Not human?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Are you a bot?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,You a robot?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,you’re cute,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,You are cute,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,You are handsome,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Do you have a hobby?,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Tell me your hobby,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Tell me your hobbies,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Tell me about your personality,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Woohoooo!!!,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Woohoo!!,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Yippiee!,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+small-talk,static-query,en-US,static-query,Yahoo!,"[{'text': ['I’m good. Thanks for asking!!'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,you’re annoying,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,Are you stupid?,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,you’re stupid,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,Stupid bot,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,stupid robot,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,you’re so stupid!,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,insane!!,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,foolish bot,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,Foolish robot,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,You are annoying,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,I hate you,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,you’re boring,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,You are boring,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,You are bad,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,you’re bad,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,you’re crazy,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,You are crazy,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,Don’t you understand anything?,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,You don’t understand anything,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,you’re dumb,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,are you dumb?,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,what the fuck?,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,Fuck you,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,This is shit,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,fuck,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,hell,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,Fuck off,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,shitty,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,Shitty service,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,stupid,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,Stupid bot,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,You are disgusting,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,you’re disgusting,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,you’re horrible,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,you are horrible,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,you are useless,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,you’re useless,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,useless,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,This is stupid,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,You have no sense,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,You make no sense,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,You have no use,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,You are an idiot,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,you're an idiot,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,you idiot,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,wtf?,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,WTH?,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,fuck this,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,Are you stupid?,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,Are you idiot?,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,You are stupid,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,You're stupid,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,You are dumb,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,you’re dumb,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,you’re fuck,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,you are fuck,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+expletive,static-query,en-US,static-query,What the hell,"[{'text': ['Sorry you feel this way.'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,need to talk to human,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,Let me talk to customer agent,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,Let me talk to customer support,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,Let me speak to customer service,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,Let me speak to customer agent,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,Let me speak to customer support,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,Let me talk to customer service,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,Customer service,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,Customer support,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,Customer agent,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,Need a human,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,Need live human,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,need to speak to human,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,I need customer support,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,Need customer support,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,I want to speak to human,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,I want to speak to customer service,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,I need human,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,i need customer service,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,i need live agent,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,I want to speak to live agent,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+escalation,static-query,en-US,static-query,I need answers now!,"[{'text': ['Sure! You can reach out to our customer service on XXX-XXX-XXXX. Thank you for reaching out!!'], 'custom': ''}]",[]
+card-block,dynamic-query,en-US,dynamic-query,card block,"[{'text': ['Sure. Your card ending XXXX has been successfully blocked.'], 'custom': ''}]",[]
+card-block,dynamic-query,en-US,dynamic-query,Block card,"[{'text': ['Sure. Your card ending XXXX has been successfully blocked.'], 'custom': ''}]",[]
+card-block,dynamic-query,en-US,dynamic-query,block my card,"[{'text': ['Sure. Your card ending XXXX has been successfully blocked.'], 'custom': ''}]",[]
+card-block,dynamic-query,en-US,dynamic-query,Can you block my card?,"[{'text': ['Sure. Your card ending XXXX has been successfully blocked.'], 'custom': ''}]",[]
+card-block,dynamic-query,en-US,dynamic-query,Please block my card,"[{'text': ['Sure. Your card ending XXXX has been successfully blocked.'], 'custom': ''}]",[]
+card-block,dynamic-query,en-US,dynamic-query,I need to block my card,"[{'text': ['Sure. Your card ending XXXX has been successfully blocked.'], 'custom': ''}]",[]
+card-block,dynamic-query,en-US,dynamic-query,Card needs to be blocked,"[{'text': ['Sure. Your card ending XXXX has been successfully blocked.'], 'custom': ''}]",[]
+card-unblock,dynamic-query,en-US,dynamic-query,card unblock,"[{'text': ['Sure. Your card ending XXXX has been successfully unblocked.'], 'custom': ''}]",[]
+card-unblock,dynamic-query,en-US,dynamic-query,unblock card,"[{'text': ['Sure. Your card ending XXXX has been successfully unblocked.'], 'custom': ''}]",[]
+card-unblock,dynamic-query,en-US,dynamic-query,unblock my card,"[{'text': ['Sure. Your card ending XXXX has been successfully unblocked.'], 'custom': ''}]",[]
+card-unblock,dynamic-query,en-US,dynamic-query,Can you unblock my card?,"[{'text': ['Sure. Your card ending XXXX has been successfully unblocked.'], 'custom': ''}]",[]
+card-unblock,dynamic-query,en-US,dynamic-query,Please unblock my card,"[{'text': ['Sure. Your card ending XXXX has been successfully unblocked.'], 'custom': ''}]",[]
+card-unblock,dynamic-query,en-US,dynamic-query,I need to unblock my card,"[{'text': ['Sure. Your card ending XXXX has been successfully unblocked.'], 'custom': ''}]",[]
+card-unblock,dynamic-query,en-US,dynamic-query,Card needs to be unblocked,"[{'text': ['Sure. Your card ending XXXX has been successfully unblocked.'], 'custom': ''}]",[]
