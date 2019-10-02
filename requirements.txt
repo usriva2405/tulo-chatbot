@@ -8,6 +8,7 @@ future==0.17.1
 google-api-core==1.14.2
 google-auth==1.6.3
 googleapis-common-protos==1.6.0
+mongoengine==0.18.2
 gunicorn==19.4.5
 h5py==2.9.0
 html5lib==1.0.1
