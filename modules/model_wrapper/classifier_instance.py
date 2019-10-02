@@ -34,6 +34,8 @@ class ClassifierInstance:
         self.decision_boundary = decision_boundary
         self.unique_train_df = unique_train_df
 
+        logger.info(self.unique_train_df.head(1))
+
         # column names
         self.col_lang = config['mongo-data']['col_lang']
         self.col_category = config['mongo-data']['col_category']
@@ -106,7 +108,8 @@ class ClassifierInstance:
         # TODO - extract response from json and send appropriate randomized response
         if numeric_category != -1:
             response_list = self.extract_response(lang, numeric_category)
-            logger.info("response_list type : {0}".format(type(response_list)))
+            logger.info("numeric_category : {0}".format(numeric_category))
+            logger.info("response_list : {0}".format(response_list))
         else:
             response_list = unclassifiable_response.get("response")
 
