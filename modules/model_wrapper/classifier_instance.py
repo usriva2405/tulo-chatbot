@@ -106,6 +106,7 @@ class ClassifierInstance:
         # TODO - extract response from json and send appropriate randomized response
         if numeric_category != -1:
             response_list = self.extract_response(lang, numeric_category)
+            logger.info("response_list type : {0}".format(type(response_list)))
         else:
             response_list = unclassifiable_response.get("response")
 
