@@ -1,8 +1,12 @@
 from mongoengine import *
 import json
-from modules.data.mongo.dao.serializable import Serializable
+import configparser
+config = configparser.ConfigParser()
+config.read('config.ini')
 
-connect("tulo_train")
+url = config['model-file-name']['url']
+db = config['model-file-name']['db']
+connect(db, host=url)
 
 
 class Circumstance(EmbeddedDocument):
