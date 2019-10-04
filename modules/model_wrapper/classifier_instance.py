@@ -71,7 +71,7 @@ class ClassifierInstance:
 
     def __extract_value_from_train_data(self, lang, numeric_category, column_name):
         logger.info("__extract_value_from_train_data__")
-        logger.info(self.unique_train_df.head(1))
+        logger.info(self.unique_train_df[self.col_category_numeric].value_counts())
         if numeric_category != -1:
             df = self.unique_train_df[(self.unique_train_df[self.col_lang] == lang) &
                                       (self.unique_train_df[self.col_category_numeric] == numeric_category)]
@@ -113,6 +113,9 @@ class ClassifierInstance:
             logger.info("response_list : {0}".format(response_list))
         else:
             response_list = unclassifiable_response.get("response")
+
+        # the only condition response list would be null would be in case the language isn't supported
+
 
         if response_list is not None:
             try:

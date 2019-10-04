@@ -26,6 +26,7 @@ from modules.nlp_query_parser import vectorizer_factory
 from modules.nlp_query_parser.vector_type import VectorType
 from modules.nlp_query_parser.model_selection import model_factory
 from modules.model_wrapper.classifier_instance import ClassifierInstance
+from modules.data.mongo.dao.train_dao import TrainDao
 
 import configparser
 
