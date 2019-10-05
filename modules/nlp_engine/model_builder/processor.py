@@ -9,23 +9,16 @@ Created on Sun Sep 15 10:56:19 2019
 '''
 # -*- coding: utf-8 -*-
 import time
-import pandas as pd
 import numpy as np
-import scipy as sp
 from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.preprocessing import LabelEncoder
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.linear_model import LogisticRegression
-from sklearn import metrics
-from sklearn.pipeline import Pipeline
 from sklearn.metrics import r2_score, mean_squared_error, classification_report
 
 # custom modules/ packages
-from modules.nlp_query_parser import vectorizer_factory
-from modules.nlp_query_parser.vector_type import VectorType
-from modules.nlp_query_parser.model_selection import model_factory
-from modules.model_wrapper.classifier_instance import ClassifierInstance
+from modules.nlp_engine.vector_selection import vectorizer_factory
+from modules.nlp_engine.model_selection import model_factory
+from modules.nlp_engine.classifier_instance.classifier_instance import ClassifierInstance
+from modules.data.dao.train_dao import TrainDao
 
 import configparser
 
@@ -35,9 +28,11 @@ warnings.filterwarnings('ignore')
 
 config = configparser.ConfigParser()
 config.read('config.ini')
+# initialize train dao
+train_dao = TrainDao()
 
 
-class Predictor:
+class Processor:
     """
     This function defines the columns for prediction
     This also defines the language dictionary to be used for prediction models.
@@ -93,7 +88,9 @@ class Predictor:
         self.__define_unique_df()
 
     def __read_train_data(self):
-        self.train_df = pd.read_csv(self.train_file_location)
+        # self.train_df = pd.read_csv(self.train_file_location)
+        # This will read directly from mongoDB, instead of a flat-file csv.
+        self.train_df = train_dao.get_train_df()
         return self.train_df
 
     """
@@ -101,7 +98,8 @@ class Predictor:
     """
 
     def __define_unique_df(self):
-        self.unique_train_df = self.train_df.drop(columns=[self.col_query], axis=1).drop_duplicates()
+        # self.unique_train_df = self.train_df.drop(columns=[self.col_query], axis=1).drop_duplicates()
+        self.unique_train_df = self.train_df.loc[self.train_df[self.col_category].astype(str).drop_duplicates().index]
 
     """
     @description : This prepares the training and test split
@@ -177,6 +175,7 @@ class Predictor:
     """
     @description : this method is ultimately called for fitting the model on training data
     """
+
     def fit_train_test(self, use_decision_function, decision_boundary):
         print('--------------------------------------------------------------------------------')
         self.model = model_factory.get_model(self.model_type)

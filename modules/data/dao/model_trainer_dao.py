@@ -18,9 +18,9 @@ Created on Sun Sep 15 10:56:19 2019
     RECOMMENDATION: change the filename when you change the model
 """
 
-from modules.predictor import Predictor
-from modules.nlp_query_parser.vector_type import VectorType
-from modules.nlp_query_parser.model_selection.model_type import ModelType
+from modules.nlp_engine.model_builder.processor import Processor
+from modules.nlp_engine.vector_selection.vector_type import VectorType
+from modules.nlp_engine.model_selection.model_type import ModelType
 import pickle
 import configparser
 import logging
@@ -39,7 +39,7 @@ def setup_model_weights():
     # training file location
     train_file_location = 'modules/data/' + config['mongo-data']['mongo_train_fileName']
 
-    predictor = Predictor(VectorType.TFIDF, ModelType.LOGISTIC, train_file_location)
+    predictor = Processor(VectorType.TFIDF, ModelType.LOGISTIC, train_file_location)
 
     # setup training data
     predictor.setup_train_data()

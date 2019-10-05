@@ -6,8 +6,8 @@ Created on Fri Sep 13 15:43:27 2019
 @author: usrivastava
 """
 
-from modules.nlp_query_parser.model_selection.models import Logistic, RandomForest, ExtraTrees, Gauss, SVM
-from modules.nlp_query_parser.model_selection.model_type import ModelType
+from modules.nlp_engine.model_selection.models import Logistic, RandomForest, ExtraTrees, Gauss, SVM
+from modules.nlp_engine.model_selection.model_type import ModelType
 
 def get_model(type):
     if type == ModelType.LOGISTIC:

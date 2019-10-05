@@ -71,7 +71,7 @@ class ClassifierInstance:
 
     def __extract_value_from_train_data(self, lang, numeric_category, column_name):
         logger.info("__extract_value_from_train_data__")
-        logger.info(self.unique_train_df.head(1))
+        logger.info(self.unique_train_df[self.col_category_numeric].value_counts())
         if numeric_category != -1:
             df = self.unique_train_df[(self.unique_train_df[self.col_lang] == lang) &
                                       (self.unique_train_df[self.col_category_numeric] == numeric_category)]
@@ -94,7 +94,6 @@ class ClassifierInstance:
     def extract_response(self, lang, numeric_category):
         return self.__extract_value_from_train_data(lang, numeric_category, self.col_response)
 
-
     """
     @description : this method will select random response from the given responses and prepare a list of responses
     """
@@ -113,6 +112,8 @@ class ClassifierInstance:
             logger.info("response_list : {0}".format(response_list))
         else:
             response_list = unclassifiable_response.get("response")
+
+        # the only condition response list would be null would be in case the language isn't supported
 
         if response_list is not None:
             try:
@@ -133,15 +134,15 @@ class ClassifierInstance:
                         response_json = json.loads(response)
                     # response json text element is a list of possible responses.
                     # Use a random index to get random response
-                    index = utility_functions.get_random_number(len(response_json.get("text"))-1)
+                    index = utility_functions.get_random_number(len(response_json.get("text")) - 1)
                     logger.info("index value : {0}".format(index))
                     text_str = response_json.get("text")[index]
                     logger.info("text_str : {0}".format(text_str))
                     custom_json_str = response_json.get("custom")
                     logger.info("custom_json_str : {0}".format(custom_json_str))
                     reply = {
-                        "text" : text_str,
-                        "custom" : custom_json_str
+                        "text": text_str,
+                        "custom": custom_json_str
                     }
                     replies.append(reply)
 

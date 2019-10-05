@@ -4,8 +4,8 @@ import configparser
 config = configparser.ConfigParser()
 config.read('config.ini')
 
-url = config['model-file-name']['url']
-db = config['model-file-name']['db']
+url = config['mongo-data']['url']
+db = config['mongo-data']['db']
 connect(db, host=url)
 
 
