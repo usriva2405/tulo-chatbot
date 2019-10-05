@@ -1,1 +1,1 @@
-web: gunicorn controller:app
+web: gunicorn modules.controllers.flask_controller:app

@@ -6,13 +6,11 @@ Created on Sun Sep 22 22:26:19 2019
     This is a dao for training data
 '''
 
-from mongoengine import *
 import pandas as pd
-import numpy as np
 import configparser
 import logging
 import json
-from modules.data.mongo.dao.model import Train, Response, Variables, Circumstance
+from modules.data.db_model.model import Train, Response, Variables, Circumstance
 
 #Setup Logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
@@ -41,6 +39,18 @@ class TrainDao:
         # setup everything
         # This should not be part of the class initialization, and instead should be explicit event.
         # self.setup_flatfile()
+
+    """
+    This method returns dataframe, and does not save it as csv.
+    #TODO add user configuration
+    """
+    def get_train_df(self):
+        self.__load_train_data()
+        if self.train_list is not None:
+            self.__create_flatfile()
+        else:
+            logger.error("data could not be loaded from mongodb")
+        return self.df_train_flatfile
 
     def setup_flatfile(self):
         self.__load_train_data()
