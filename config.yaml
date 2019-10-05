@@ -1,0 +1,46 @@
+appName: tulo_bot
+logLevel: WARN
+
+DEV:
+  mongodb:
+    url: mongodb://127.0.0.1:27017/tulo_train
+    db: tulo_train
+  df_columns:
+    col_lang: lang
+    col_category: category
+    col_query: query
+    col_variables: variables
+    col_response: response
+    col_input_circumstance: input_circumstance
+    col_output_circumstance: output_circumstance
+  flatfile:
+    mongo_train_fileName: train.csv
+  model:
+    filename:
+      response_classifier: CLASSIFIER_TFIDF_LOGISTIC_RESPONSE_01.sav
+    classifier:
+      model: LOGISTIC
+    vectorizer:
+      vector: TFIDF
+
+PROD:
+  mongodb:
+    url: mongodb://heroku_2r6cnrs1:os02s46gjpp2b0mio9qa4o3g8g@ds229078.mlab.com:29078/heroku_2r6cnrs1
+    db: heroku_2r6cnrs1
+  df_columns:
+    col_lang: lang
+    col_category: category
+    col_query: query
+    col_variables: variables
+    col_response: response
+    col_input_circumstance: input_circumstance
+    col_output_circumstance: output_circumstance
+  flatfile:
+    mongo_train_fileName: train.csv
+  model:
+    filename:
+      response_classifier: CLASSIFIER_TFIDF_LOGISTIC_RESPONSE_01.sav
+    classifier:
+      model: LOGISTIC
+    vectorizer:
+      vector: TFIDF
