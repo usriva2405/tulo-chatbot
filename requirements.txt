@@ -72,3 +72,4 @@ statsmodels==0.10.0
 tables==3.5.2
 tblib==1.4.0
 urllib3==1.24.2
+python-dotenv==0.10.3

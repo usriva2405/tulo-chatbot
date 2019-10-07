@@ -10,19 +10,15 @@ Created on Mon Sep 16 15:06:47 2019
 """
 
 import numpy as np
-import configparser
 import logging
 import json
 
 # Setup Logging
 from modules.utils import utility_functions
+from modules.utils.yaml_parser import Config
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
-
-# Setup reading from config
-config = configparser.ConfigParser()
-config.read('config.ini')
 
 
 class ClassifierInstance:
@@ -37,15 +33,15 @@ class ClassifierInstance:
         logger.info(self.unique_train_df.head(1))
 
         # column names
-        self.col_lang = config['mongo-data']['col_lang']
-        self.col_category = config['mongo-data']['col_category']
+        self.col_lang = Config.get_config_val(key="df_columns", key_1depth="col_lang")
+        self.col_category = Config.get_config_val(key="df_columns", key_1depth="col_category")
         # derived column with label encoding
         self.col_category_numeric = self.col_category + "_numeric"
-        self.col_query = config['mongo-data']['col_query']
-        self.col_response = config['mongo-data']['col_response']
-        self.col_variables = config['mongo-data']['col_variables']
-        self.col_input_circumstance = config['mongo-data']['col_input_circumstance']
-        self.col_output_circumstance = config['mongo-data']['col_output_circumstance']
+        self.col_query = Config.get_config_val(key="df_columns", key_1depth="col_query")
+        self.col_response = Config.get_config_val(key="df_columns", key_1depth="col_response")
+        self.col_variables = Config.get_config_val(key="df_columns", key_1depth="col_variables")
+        self.col_input_circumstance = Config.get_config_val(key="df_columns", key_1depth="col_input_circumstance")
+        self.col_output_circumstance = Config.get_config_val(key="df_columns", key_1depth="col_output_circumstance")
 
     """
     @description : getter for the model class

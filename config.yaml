@@ -22,6 +22,9 @@ DEV:
       model: LOGISTIC
     vectorizer:
       vector: TFIDF
+  auth:
+    telegram:
+      token: 911971525:AAExau9c1NCnZMeFOZ-xEvkOyNmwtgJJbA8
 
 PROD:
   mongodb:
@@ -36,11 +39,16 @@ PROD:
     col_input_circumstance: input_circumstance
     col_output_circumstance: output_circumstance
   flatfile:
+    location: modules/data/
     mongo_train_fileName: train.csv
   model:
-    filename:
+    file:
+      location: modules/saved_models/
       response_classifier: CLASSIFIER_TFIDF_LOGISTIC_RESPONSE_01.sav
     classifier:
       model: LOGISTIC
     vectorizer:
       vector: TFIDF
+  auth:
+    telegram:
+      token: 911971525:AAExau9c1NCnZMeFOZ-xEvkOyNmwtgJJbA8

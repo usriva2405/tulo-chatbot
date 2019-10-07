@@ -1,11 +1,9 @@
 from mongoengine import *
+from modules.utils.yaml_parser import Config
 import json
-import configparser
-config = configparser.ConfigParser()
-config.read('config.ini')
 
-url = config['mongo-data']['url']
-db = config['mongo-data']['db']
+url = Config.get_config_val(key="mongodb", key_1depth="url")
+db = Config.get_config_val(key="mongodb", key_1depth="db")
 connect(db, host=url)
 
 

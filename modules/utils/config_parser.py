@@ -7,19 +7,19 @@ class Config:
     """Interact with configuration variables."""
 
     configParser = SafeConfigParser()
-    configFilePath = (os.path.join(os.getcwd(), 'config.ini'))
+    configFilePath = (os.path.join(os.getcwd(), 'env.ini'))
 
     @classmethod
     def initialize(cls, newhire_table):
-        """Start config by reading config.ini."""
+        """Start config by reading env.ini."""
         cls.configParser.read(cls.configFilePath)
 
     @classmethod
     def prod(cls, key):
-        """Get prod values from config.ini."""
+        """Get prod values from env.ini."""
         return cls.configParser.get('PROD', key)
 
     @classmethod
     def dev(cls, key):
-        """Get dev values from config.ini."""
+        """Get dev values from env.ini."""
         return cls.configParser.get('DEV', key)

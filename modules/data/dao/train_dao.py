@@ -7,32 +7,28 @@ Created on Sun Sep 22 22:26:19 2019
 '''
 
 import pandas as pd
-import configparser
 import logging
 import json
 from modules.data.db_model.model import Train, Response, Variables, Circumstance
+from modules.utils.yaml_parser import Config
 
 #Setup Logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
-
-#Setup reading from config
-config = configparser.ConfigParser()
-config.read('config.ini')
 
 class TrainDao:
     def __init__(self):
 
 
         # column names
-        self.col_lang = config['mongo-data']['col_lang']
-        self.col_category = config['mongo-data']['col_category']
-        self.col_query = config['mongo-data']['col_query']
-        self.col_response = config['mongo-data']['col_response']
-        self.col_variables = config['mongo-data']['col_variables']
-        self.col_input_circumstance = config['mongo-data']['col_input_circumstance']
-        self.col_output_circumstance = config['mongo-data']['col_output_circumstance']
-        self.train_file_location = 'modules/data/' + config['mongo-data']['mongo_train_fileName']
+        self.col_lang = Config.get_config_val(key="df_columns", key_1depth="col_lang")
+        self.col_category = Config.get_config_val(key="df_columns", key_1depth="col_category")
+        self.col_query = Config.get_config_val(key="df_columns", key_1depth="col_query")
+        self.col_response = Config.get_config_val(key="df_columns", key_1depth="col_response")
+        self.col_variables = Config.get_config_val(key="df_columns", key_1depth="col_variables")
+        self.col_input_circumstance = Config.get_config_val(key="df_columns", key_1depth="col_input_circumstance")
+        self.col_output_circumstance = Config.get_config_val(key="df_columns", key_1depth="col_output_circumstance")
+        self.train_file_location = Config.get_config_val(key="flatfile", key_1depth="location") + Config.get_config_val(key="flatfile", key_1depth="mongo_train_fileName")
 
         self.train_list = []
         self.df_train_flatfile = pd.DataFrame()
@@ -118,15 +114,15 @@ class TrainDao:
     '''
     def bulk_insert_documents(self):
         #load the old file
-        old_train_file_location = 'modules/data/' + config['data']['train-file-name']
+        old_train_file_location = Config.get_config_val(key="flatfile", key_1depth="location") + Config.get_config_val(key="flatfile", key_1depth="mongo_train_fileName")
         consumer_ques = pd.read_csv(old_train_file_location)
 
         #first change the column names
-        consumer_ques.rename(columns={'question-category':config['mongodb-data']['col_category'], 'question':config['mongodb-data']['col_query'], 'answer':config['mongodb-data']['col_response']}, inplace=True)
+        consumer_ques.rename(columns={'question-category':Config.get_config_val(key="df_columns", key_1depth="col_category"), 'question':Config.get_config_val(key="df_columns", key_1depth="col_query"), 'answer':Config.get_config_val(key="df_columns", key_1depth="col_response")}, inplace=True)
 
         #in order to create 1 row per category, we will have to split data based on every category.
         #1. extract unique categories in data
-        categories = consumer_ques[config['mongodb-data']['col_category']].unique()
+        categories = consumer_ques[Config.get_config_val(key="df_columns", key_1depth="col_category")].unique()
 
         #2. iterate over each category
         for cat in categories:
@@ -134,13 +130,13 @@ class TrainDao:
             trainObj = None
 
             #3. split data per category
-            df = consumer_ques[consumer_ques[config['mongodb-data']['col_category']] == cat]
+            df = consumer_ques[consumer_ques[Config.get_config_val(key="df_columns", key_1depth="col_category")] == cat]
 
             #4. extract query
-            training_queries = df[[config['mongodb-data']['col_query']]].values.T.tolist()[0]
+            training_queries = df[[Config.get_config_val(key="df_columns", key_1depth="col_query")]].values.T.tolist()[0]
 
             #4.1 extract language
-            lang = df['lang'].unique()[0]
+            lang = df[Config.get_config_val(key="df_columns", key_1depth="col_lang")].unique()[0]
 
             #4.2 extract category - category is already extracted in "cat"
 
@@ -148,7 +144,7 @@ class TrainDao:
             trainObj = Train(category=cat, lang=lang, training_queries=training_queries)
 
             #6. create circumstance
-            circumstance = Circumstance(input_circumstance = df[config['mongodb-data']['col_input_circumstance']].unique()[0], output_circumstance = df[config['mongodb-data']['col_output_circumstance']].unique()[0])
+            circumstance = Circumstance(input_circumstance = df[Config.get_config_val(key="df_columns", key_1depth="col_input_circumstance")].unique()[0], output_circumstance = df[Config.get_config_val(key="df_columns", key_1depth="col_output_circumstance")].unique()[0])
             # circumstance = {
             #     'input_circumstance' : df['input_circumstance'].unique()[0],
             #     'output_circumstance' : df['output_circumstance'].unique()[0]
@@ -159,7 +155,7 @@ class TrainDao:
             #7. create response
             responseList = []
             textList = []
-            textList.append(df[config['mongodb-data']['col_response']].unique()[0])
+            textList.append(df[Config.get_config_val(key="df_columns", key_1depth="col_response")].unique()[0])
             response = Response(text=textList, custom = '')
             # responseObj = {
             #     'text' : textList,
@@ -170,7 +166,7 @@ class TrainDao:
 
             #8. create variables
 
-            variables = json.loads(df[config['mongodb-data']['col_variables']].unique()[0])
+            variables = json.loads(df[Config.get_config_val(key="df_columns", key_1depth="col_variables")].unique()[0])
             for var in variables:
                 varObj = Variables(name=var.get('name'), type=var.get('type'), value=var.get('value'), io_type=var.get('io_type'))
                 trainObj.variables.append(varObj)
