@@ -1,9 +1,9 @@
-import configparser
 import json
 import logging
 import os
 import re
 import sys
+from modules.utils.yaml_parser import Config
 
 from telegram import (ReplyKeyboardRemove)
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters,
@@ -103,9 +103,7 @@ def error(update, context):
 def main():
     initialize();
     # Read telegram token from config
-    config = configparser.ConfigParser()
-    config.read('config.ini')
-    telegram_token = config['telegram']['telegram-token']
+    telegram_token = Config.get_config_val(key="auth", key_1depth="telegram", key_2depth="token")
     # telegram_token = config['telegram-token']
     # Create the Updater and pass it your bot's token.
     # Make sure to set use_context=True to use the new context based callbacks

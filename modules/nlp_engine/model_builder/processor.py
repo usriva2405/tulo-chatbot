@@ -19,15 +19,12 @@ from modules.nlp_engine.vector_selection import vectorizer_factory
 from modules.nlp_engine.model_selection import model_factory
 from modules.nlp_engine.classifier_instance.classifier_instance import ClassifierInstance
 from modules.data.dao.train_dao import TrainDao
-
-import configparser
+from modules.utils.yaml_parser import Config
 
 import warnings
 
 warnings.filterwarnings('ignore')
 
-config = configparser.ConfigParser()
-config.read('config.ini')
 # initialize train dao
 train_dao = TrainDao()
 
@@ -43,22 +40,22 @@ class Processor:
         self.train_file_location = train_file_location
 
         # language column to be used for dictionary of predictors
-        self.col_lang = config['mongo-data']['col_lang']
+        self.col_lang = Config.get_config_val(key="df_columns", key_1depth="col_lang")
 
         # dependent columns
-        self.col_query = config['mongo-data']['col_query']
+        self.col_query = Config.get_config_val(key="df_columns", key_1depth="col_query")
 
         # target columns
-        self.col_category = config['mongo-data']['col_category']
+        self.col_category = Config.get_config_val(key="df_columns", key_1depth="col_category")
 
         # derived column with label encoding
         self.col_category_numeric = self.col_category + "_numeric"
 
         # Corresponding columns which will be extracted from predicted category
-        self.col_response = config['mongo-data']['col_response']
-        self.col_variables = config['mongo-data']['col_variables']
-        self.col_input_circumstance = config['mongo-data']['col_input_circumstance']
-        self.col_output_circumstance = config['mongo-data']['col_output_circumstance']
+        self.col_response = Config.get_config_val(key="df_columns", key_1depth="col_response")
+        self.col_variables = Config.get_config_val(key="df_columns", key_1depth="col_variables")
+        self.col_input_circumstance = Config.get_config_val(key="df_columns", key_1depth="col_input_circumstance")
+        self.col_output_circumstance = Config.get_config_val(key="df_columns", key_1depth="col_output_circumstance")
 
         # additional data about model and vector
         self.model_type = model_type

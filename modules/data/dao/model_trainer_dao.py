@@ -21,8 +21,8 @@ Created on Sun Sep 15 10:56:19 2019
 from modules.nlp_engine.model_builder.processor import Processor
 from modules.nlp_engine.vector_selection.vector_type import VectorType
 from modules.nlp_engine.model_selection.model_type import ModelType
+from modules.utils.yaml_parser import Config
 import pickle
-import configparser
 import logging
 
 # Enable logging
@@ -31,13 +31,10 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
-config = configparser.ConfigParser()
-config.read('config.ini')
-
 
 def setup_model_weights():
     # training file location
-    train_file_location = 'modules/data/' + config['mongo-data']['mongo_train_fileName']
+    train_file_location = Config.get_config_val(key="flatfile", key_1depth="location") + Config.get_config_val(key="flatfile", key_1depth="mongo_train_fileName")
 
     predictor = Processor(VectorType.TFIDF, ModelType.LOGISTIC, train_file_location)
 
@@ -46,5 +43,5 @@ def setup_model_weights():
     response_classifier = predictor.fit_train_test(True, 0.18)
 
     # save the model
-    filename = 'modules/saved_models/' + config['model-file-name']['response-classifier']
+    filename = Config.get_config_val(key="model", key_1depth="file", key_2depth="location") + Config.get_config_val(key="model", key_1depth="file", key_2depth="response_classifier")
     pickle.dump(response_classifier, open(filename, 'wb'))

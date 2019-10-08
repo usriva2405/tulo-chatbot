@@ -9,6 +9,7 @@ google-api-core==1.14.2
 google-auth==1.6.3
 googleapis-common-protos==1.6.0
 mongoengine==0.18.2
+confuse==1.0.0
 gunicorn==19.4.5
 h5py==2.9.0
 html5lib==1.0.1
@@ -71,3 +72,4 @@ statsmodels==0.10.0
 tables==3.5.2
 tblib==1.4.0
 urllib3==1.24.2
+python-dotenv==0.10.3
