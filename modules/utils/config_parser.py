@@ -1,16 +1,16 @@
 # config_loader.py
-from configparser import SafeConfigParser
+from configparser import SafeConfigParser, ConfigParser
 import os
 
 
 class Config:
     """Interact with configuration variables."""
 
-    configParser = SafeConfigParser()
+    configParser = ConfigParser()
     configFilePath = (os.path.join(os.getcwd(), 'env.ini'))
 
     @classmethod
-    def initialize(cls, newhire_table):
+    def initialize(cls):
         """Start config by reading env.ini."""
         cls.configParser.read(cls.configFilePath)
 

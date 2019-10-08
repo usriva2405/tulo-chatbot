@@ -12,7 +12,7 @@ import logging
 from modules.services.chat_service import ChatService
 
 app = Flask(__name__)
-bankchat_app = ChatService()
+chatService = ChatService()
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -20,7 +20,12 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 
-@app.route('/healthcheck')
+@app.route('/', methods=['GET'])
+def get_root():
+    return "<html><head><title>Welcome to Tulo!</title></head><body><h1>Welcome to Tulo!</h1><body></html>"
+
+
+@app.route('/healthcheck', methods=['GET'])
 def health_check():
     return "ok"
 
@@ -30,7 +35,7 @@ def query():
     data = request.get_json()
     inquiry = data['query']
     lang = data['lang']
-    answer = bankchat_app.predict_response(lang, inquiry)
+    answer = chatService.predict_response(lang, inquiry)
 
     logger.info('************************')
     logger.info('Prediction given by model')
@@ -47,6 +52,13 @@ def query():
     # except:
     #     logger.info("error ", sys.exc_info()[0])
     #     jsonStr = None
+
+    return json.dumps(answer)
+
+
+@app.route('/retrain', methods=['GET'])
+def retrain():
+    answer = chatService.retrain()
 
     return json.dumps(answer)
 

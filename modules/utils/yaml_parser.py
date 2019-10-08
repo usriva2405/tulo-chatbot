@@ -27,6 +27,7 @@ class Config:
 
     @classmethod
     def get_config_val(cls, key, *args, **kwargs):
+        # TODO change it to key1.key2.key3, parse the string, extract depth
         """Get prod values from config.yaml."""
         env = cls.__getenv()
         key_1depth = kwargs.get('key_1depth', None)

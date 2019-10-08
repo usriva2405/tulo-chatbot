@@ -39,7 +39,7 @@ class Trainer:
 
     def setup_model_weights(self):
         # training file location
-
+        logger.info("initiating re-training")
         processor = Processor(VectorType.TFIDF, ModelType.LOGISTIC, self.train_file_location)
         # setup training data
         processor.setup_train_data()
@@ -47,3 +47,5 @@ class Trainer:
 
         # save the model
         pickle.dump(response_classifier, open(self.filename, 'wb'))
+
+        logger.info("re-training complete. Saved to file : {0}".format(self.filename))
