@@ -7,17 +7,13 @@ Created on Tue Sep 17 23:02:04 2019
 """
 
 from flask import Flask, request, json
-import logging
-
 from modules.services.chat_service import ChatService
+from modules.utils.app_logger import AppLogger
 
 app = Flask(__name__)
 chatService = ChatService()
 
-# Enable logging
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
-logger = logging.getLogger(__name__)
+logger = AppLogger()
 
 
 @app.route('/', methods=['GET'])

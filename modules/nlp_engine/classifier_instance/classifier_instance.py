@@ -10,20 +10,28 @@ Created on Mon Sep 16 15:06:47 2019
 """
 
 import numpy as np
-import logging
 import json
 
 # Setup Logging
 from modules.utils import utility_functions
 from modules.utils.yaml_parser import Config
+from modules.utils.app_logger import AppLogger
 
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
-logger = logging.getLogger(__name__)
+logger = AppLogger()
 
 
 class ClassifierInstance:
 
     def __init__(self, unique_train_df, model, vector, use_decision_function, decision_boundary):
+        """
+        constructor to initialize class params
+
+        :param unique_train_df: unique classes
+        :param model: model used for training
+        :param vector: vectorizer used for training
+        :param use_decision_function: whether to use decision function or not
+        :param decision_boundary: threshold for decision function
+        """
         self.model = model
         self.vector = vector
         self.use_decision_function = use_decision_function
@@ -43,29 +51,33 @@ class ClassifierInstance:
         self.col_input_circumstance = Config.get_config_val(key="df_columns", key_1depth="col_input_circumstance")
         self.col_output_circumstance = Config.get_config_val(key="df_columns", key_1depth="col_output_circumstance")
 
-    """
-    @description : getter for the model class
-    """
-
     def get_model(self):
+        """
+        getter for the model class
+        :return:
+        """
         return self.model
 
-    """
-    @description : getter for the vector class
-    """
-
     def get_vector(self):
+        """
+        getter for the vector class
+        :return:
+        """
         return self.vector
 
-    """
-    @description : this method extracts the relevant generic column wrt category numeric value
-    
-    If numeric category is >= 0, it is handled suitably
-    else if numeric_category is < 0, appropriate responses are returned
-    # TODO : add system generated intent for unclassifiable queries
-    """
-
     def __extract_value_from_train_data(self, lang, numeric_category, column_name):
+        """
+        This method extracts the relevant generic column wrt category numeric value
+
+        If numeric category is >= 0, it is handled suitably
+        else if numeric_category is < 0, appropriate responses are returned
+        # TODO : add system generated intent for unclassifiable queries
+
+        :param lang: language used for classification
+        :param numeric_category: predicted category
+        :param column_name: column to be extracted
+        :return: extracted value for given column
+        """
         logger.info("__extract_value_from_train_data__")
         logger.info(self.unique_train_df[self.col_category_numeric].value_counts())
         if numeric_category != -1:
@@ -83,18 +95,22 @@ class ClassifierInstance:
 
         return response
 
-    """
-    @description : this method extracts the relevant response wrt category numeric value
-    """
-
     def extract_response(self, lang, numeric_category):
+        """
+        This method extracts the relevant response wrt category numeric value
+        :param lang:
+        :param numeric_category:
+        :return:
+        """
         return self.__extract_value_from_train_data(lang, numeric_category, self.col_response)
 
-    """
-    @description : this method will select random response from the given responses and prepare a list of responses
-    """
-
     def get_final_response_list(self, lang, numeric_category):
+        """
+        This method will select random response from the given responses and prepare a list of responses
+        :param lang:
+        :param numeric_category:
+        :return:
+        """
         # TODO - Add this as default system intent for unclassifiable queries : issue#22
         unclassifiable_response = {
             "response": [{"text": ["I am not sure I understood", "Could you rephrase the query?",
@@ -154,32 +170,40 @@ class ClassifierInstance:
 
         return replies
 
-    """
-    @description : this method extracts the relevant response wrt category numeric value
-    """
-
     def extract_input_circumstance(self, lang, numeric_category):
+        """
+        This method extracts the relevant response wrt category numeric value
+        :param lang:
+        :param numeric_category:
+        :return:
+        """
         return self.__extract_value_from_train_data(lang, numeric_category, self.col_input_circumstance)
 
-    """
-    @description : this method extracts the relevant response wrt category numeric value
-    """
-
     def extract_output_circumstance(self, lang, numeric_category):
+        """
+        This method extracts the relevant response wrt category numeric value
+        :param lang:
+        :param numeric_category:
+        :return:
+        """
         return self.__extract_value_from_train_data(lang, numeric_category, self.col_output_circumstance)
 
-    """
-    @description : this method extracts the relevant response wrt category numeric value
-    """
-
     def extract_variables(self, lang, numeric_category):
+        """
+        This method extracts the relevant response wrt category numeric value
+        :param lang:
+        :param numeric_category:
+        :return:
+        """
         return self.__extract_value_from_train_data(lang, numeric_category, self.col_variables)
 
-    """
-    @description : this is the final response returned for a prediction 
-    """
-
     def query_response(self, lang, numeric_category):
+        """
+        This is the final response returned for a prediction
+        :param lang:
+        :param numeric_category:
+        :return:
+        """
         reaction = {
             "response": self.get_final_response_list(lang, numeric_category),
             "input_circumstance": self.extract_input_circumstance(lang, numeric_category),
@@ -189,19 +213,22 @@ class ClassifierInstance:
         }
         return reaction
 
-    """
-    @description : this is used for vectorizing input data
-    """
-
     def __vectorize_data(self, data):
+        """
+        This is used for vectorizing input data
+        :param data:
+        :return:
+        """
         X_vect = self.vector.transform(data)
         return X_vect
 
-    """
-    @description : prediction function.
-    """
-
     def predict(self, lang, query):
+        """
+        prediction function.
+        :param lang:
+        :param query:
+        :return:
+        """
         X_pred = self.__vectorize_data([query])
         y_pred = self.model.predict(X_pred)
 
@@ -225,6 +252,12 @@ class ClassifierInstance:
         return response
 
     def predict_category(self, lang, query):
+        """
+        Only returns the predicted category
+        :param lang:
+        :param query:
+        :return:
+        """
         X_pred = self.__vectorize_data([query])
         y_pred = self.model.predict(X_pred)
 

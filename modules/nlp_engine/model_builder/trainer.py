@@ -23,13 +23,10 @@ from modules.nlp_engine.vector_selection.vector_type import VectorType
 from modules.nlp_engine.model_selection.model_type import ModelType
 from modules.utils.yaml_parser import Config
 import pickle
-import logging
+from modules.utils.app_logger import AppLogger
 
-# Enable logging
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
+logger = AppLogger()
 
-logger = logging.getLogger(__name__)
 
 class Trainer:
 
@@ -38,6 +35,10 @@ class Trainer:
         self.filename = Config.get_config_val(key="model", key_1depth="file", key_2depth="location") + Config.get_config_val(key="model", key_1depth="file", key_2depth="response_classifier")
 
     def setup_model_weights(self):
+        """
+        trains the model and saves it
+        :return: None
+        """
         # training file location
         logger.info("initiating re-training")
         processor = Processor(VectorType.TFIDF, ModelType.LOGISTIC, self.train_file_location)

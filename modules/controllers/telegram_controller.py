@@ -1,5 +1,4 @@
 import json
-import logging
 import os
 import re
 import sys
@@ -8,17 +7,13 @@ from modules.utils.yaml_parser import Config
 from telegram import (ReplyKeyboardRemove)
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters,
                           ConversationHandler)
+from modules.services.chat_service import ChatService
+from modules.utils.app_logger import AppLogger
+
 
 sys.path.insert(0, os.path.abspath('..'))
 
-# Custom Modules
-from modules.services.chat_service import ChatService
-
-# Enable logging
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
-
-logger = logging.getLogger(__name__)
+logger = AppLogger()
 bankchat_app = ChatService()
 
 QUERY, CANCEL = range(2)
@@ -39,7 +34,7 @@ def start(update, context):
     return QUERY
 
 
-def closing_statement(text):
+def __closing_statement(text):
     closing_words = re.compile("thank|Thank|no|No|thats|Thats|Thanks")
     if closing_words.search(text):
         return True
@@ -50,7 +45,7 @@ def closing_statement(text):
 def query(update, context):
     user = update.message.from_user
     text = update.message.text
-    if closing_statement(text) == True:
+    if __closing_statement(text):
         logger.info("closing_statement = true %s: %s", user.first_name, update.message.text)
         # answer, answer_cat, question_cat = bankchat_app.predict_answer(text)
         answer = bankchat_app.predict_response("en-US", text)

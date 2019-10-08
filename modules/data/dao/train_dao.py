@@ -7,18 +7,16 @@ Created on Sun Sep 22 22:26:19 2019
 '''
 
 import pandas as pd
-import logging
 import json
 from modules.data.db_model.model import Train, Response, Variables, Circumstance
 from modules.utils.yaml_parser import Config
+from modules.utils.app_logger import AppLogger
 
-#Setup Logging
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
-logger = logging.getLogger(__name__)
+logger = AppLogger()
+
 
 class TrainDao:
     def __init__(self):
-
 
         # column names
         self.col_lang = Config.get_config_val(key="df_columns", key_1depth="col_lang")
