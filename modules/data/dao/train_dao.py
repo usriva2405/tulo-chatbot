@@ -8,7 +8,7 @@ Created on Sun Sep 22 22:26:19 2019
 
 import pandas as pd
 import json
-from modules.data.db_model.model import Train, Response, Variables, Circumstance
+from modules.data.db_model.model import *
 from modules.utils.yaml_parser import Config
 from modules.utils.app_logger import AppLogger
 

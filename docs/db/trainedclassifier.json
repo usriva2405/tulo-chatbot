@@ -1,0 +1,1 @@
+{ "_id" : { "$oid" : "5d9e2a556ecaa9720db5898c" }, "user_id" : { "$oid" : "5d9e190e6ecaa9720db58947" }, "broker_id" : { "$oid" : "5d9e1f9d6ecaa9720db58964" }, "model_type" : "LOGISTIC", "vector_type" : "TFIDF", "classifier" : null, "lang" : "en-US" }

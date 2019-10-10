@@ -10,16 +10,16 @@ connect(db, host=url)
 class User(Document):
     first_name = StringField(required=True, max_length=100)
     last_name = StringField(required=True, max_length=100)
-    email = EmailField(required=True)
+    email = StringField(required=True, max_length=255)
     password = StringField(required=True, max_length=100)
     age = IntField(required=False)
     gender = StringField(required=False, max_length=1)
-    created_on = ComplexDateTimeField(required=True)
+    created_on = DateTimeField(required=True)
     telegram_oAuth_token = StringField(required=False, max_length=100)
 
 
-# TODO to use it later. Not yet used.
-class Language(Document):
+# TODO to use it later. Not yet used. Also extend it from Document
+class Language:
     lang_code = StringField(required=True, max_length=8)
 
 
@@ -34,10 +34,11 @@ class Broker(Document):
 # Broker (1) : Language (n) : TrainedClassifier(1)
 # So every user can create multiple brokers, each broker may have multiple classifiers, (1 per language)
 class TrainedClassifier(Document):
-    user_id = ReferenceField(User)
+    user_id = ReferenceField(User)  # denormalized for easier usage. Otherwise not required
     broker_id = ReferenceField(Broker)
     model_type = StringField(max_length=100)
     vector_type = StringField(max_length=100)
+    classifier = FileField()
     lang = StringField(required=True, max_length=8)    # TODO replace with Language
 
 
@@ -60,6 +61,8 @@ class Response(EmbeddedDocument):
 
 # This is the final class
 class Train(Document):
+    user_id = ReferenceField(User)  # denormalized for easier usage. Otherwise not required
+    broker_id = ReferenceField(Broker)
     lang = StringField(required=True)    # TODO replace with Language
     category = StringField(required=True)
     circumstance = EmbeddedDocumentField('Circumstance')
