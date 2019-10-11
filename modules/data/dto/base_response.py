@@ -1,5 +1,4 @@
-import pandas as pd
-import numpy as np
+import json
 
 
 class BaseResponse:
@@ -15,3 +14,7 @@ class BaseResponse:
         """
         self.code = code
         self.reason = reason
+
+    def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__,
+                          sort_keys=True, indent=4)

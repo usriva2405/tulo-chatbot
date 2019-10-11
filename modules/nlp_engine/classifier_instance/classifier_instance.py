@@ -13,11 +13,15 @@ import numpy as np
 import json
 
 # Setup Logging
-from modules.utils import utility_functions
+from modules.utils.utility_functions import UtilityFunctions
 from modules.utils.yaml_parser import Config
-from modules.utils.app_logger import AppLogger
+import logging
 
-logger = AppLogger()
+# Enable logging
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
+
+logger = logging.getLogger(__name__)
 
 
 class ClassifierInstance:
@@ -126,8 +130,10 @@ class ClassifierInstance:
             response_list = unclassifiable_response.get("response")
 
         # the only condition response list would be null would be in case the language isn't supported
+        replies = []
 
         if response_list is not None:
+
             try:
                 logger.info("response_list type : {0}".format(type(response_list)))
                 if type(response_list) == str:
@@ -137,7 +143,7 @@ class ClassifierInstance:
                 logger.info("response_list : {0}".format(response_list))
 
                 # response could be a list of responses, so we should prepare a list of filtered responses and use it
-                replies = []
+
                 for response in response_list:
                     logger.info("inside response_list array loop")
                     response = str(response).replace("'", '"')
@@ -146,7 +152,7 @@ class ClassifierInstance:
                         response_json = json.loads(response)
                     # response json text element is a list of possible responses.
                     # Use a random index to get random response
-                    index = utility_functions.get_random_number(len(response_json.get("text")) - 1)
+                    index = UtilityFunctions.get_random_number(len(response_json.get("text")) - 1)
                     logger.info("index value : {0}".format(index))
                     text_str = response_json.get("text")[index]
                     logger.info("text_str : {0}".format(text_str))
@@ -165,7 +171,13 @@ class ClassifierInstance:
                     "custom": ""
                 }
                 replies.append(reply)
-
+        else:
+            replies = []
+            reply = {
+                "text": "I'm probably not trained for this language",
+                "custom": ""
+            }
+            replies.append(reply)
             # prepare a dictionary of responses
 
         return replies

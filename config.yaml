@@ -3,8 +3,10 @@ logLevel: WARN
 
 DEV:
   mongodb:
-    url: mongodb://127.0.0.1:27017/tulo_train
-    db: tulo_train
+    url: mongodb://127.0.0.1:27017/tulo_bot
+    db: tulo_bot
+  namespace:
+    dns: http://127.0.0.1:5000/
   df_columns:
     col_lang: lang
     col_category: category
@@ -14,9 +16,14 @@ DEV:
     col_input_circumstance: input_circumstance
     col_output_circumstance: output_circumstance
   flatfile:
+    location: modules/data/
     mongo_train_fileName: train.csv
+  cache:
+    ttl: 180
+    max_size: 1000
   model:
-    filename:
+    file:
+      location: modules/saved_models/
       response_classifier: CLASSIFIER_TFIDF_LOGISTIC_RESPONSE_01.sav
     classifier:
       model: LOGISTIC
@@ -30,6 +37,8 @@ PROD:
   mongodb:
     url: mongodb://heroku_2r6cnrs1:os02s46gjpp2b0mio9qa4o3g8g@ds229078.mlab.com:29078/heroku_2r6cnrs1
     db: heroku_2r6cnrs1
+  namespace:
+    dns: https://bankbot-app.herokuapp.com
   df_columns:
     col_lang: lang
     col_category: category
@@ -41,6 +50,9 @@ PROD:
   flatfile:
     location: modules/data/
     mongo_train_fileName: train.csv
+  cache:
+    ttl: 180
+    max_size: 1000
   model:
     file:
       location: modules/saved_models/

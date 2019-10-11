@@ -1,5 +1,6 @@
 import random
 import re
+import uuid
 
 # a regular expression for validating an Email
 regex = '^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
@@ -21,3 +22,7 @@ class UtilityFunctions:
         :return:
         """
         return int(random.randint(0, upper_range))
+
+    @staticmethod
+    def get_uuid():
+        return uuid.uuid1().__str__()

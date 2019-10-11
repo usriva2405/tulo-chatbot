@@ -9,14 +9,18 @@ Created on Sun Oct 10 16:18:19 2019
     RECOMMENDATION: change the filename when you change the model
 """
 
-from modules.utils.app_logger import AppLogger
 from modules.data.db_model.model import *
 from modules.data.dto.base_response import BaseResponse
+import logging
 
-logger = AppLogger()
+# Enable logging
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
+
+logger = logging.getLogger(__name__)
 
 
-class TrainedClassifier:
+class TrainedClassifierDao:
 
     @classmethod
     def save_classifier(cls, user, broker, model_type, vector_type, classifier, lang):
@@ -110,22 +114,21 @@ class TrainedClassifier:
         :param lang:
         :return:
         """
-        response = None
+        classifier = None
         # training file location
         if user is not None:
             if broker is not None:
                 if lang is not None:
                     if model_type is not None and vector_type is not None:
-                        classifier = TrainedClassifier.objects(user=user, broker=broker, model_type=model_type,
-                                                               vector_type=vector_type, lang=lang)
-                        classifier = BaseResponse(code=200, reason="successfully saved")
+                        classifier = TrainedClassifier.objects(user_id__all=[user], broker_id__all=[broker], model_type__all=[model_type],
+                                                               vector_type__all=[vector_type], lang__all=[lang])
                     else:
-                        classifier = BaseResponse(code=500, reason="model type and vector type cannot be null")
+                        logger.error("model type and vector type cannot be null")
                 else:
-                    classifier = BaseResponse(code=500, reason="lang cannot be null")
+                    logger.error("lang cannot be null")
             else:
-                classifier = BaseResponse(code=500, reason="broker cannot be null")
+                logger.error("broker cannot be null")
         else:
-            classifier = BaseResponse(code=500, reason="user cannot be null")
+            logger.error("user cannot be null")
 
         return classifier

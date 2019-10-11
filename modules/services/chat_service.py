@@ -2,6 +2,7 @@
 import pickle
 import os
 from modules.nlp_engine.model_builder.trainer import Trainer
+from modules.services.auth_service import AuthService
 
 
 class ChatService:
@@ -21,13 +22,3 @@ class ChatService:
     def predict_response(self, lang, query):
         print('query received by bankchat_app')
         return self.response_predictor.predict(lang, query)
-
-    def retrain(self):
-        response = None
-        try:
-            self.trainer.setup_model_weights()
-            response = "Successfully re-trained"
-        except Exception as e:
-            response = "Error occurred"
-        return response
-

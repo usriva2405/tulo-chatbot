@@ -1,30 +1,30 @@
 import logging
 
+# Enable logging
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
+
+logger = logging.getLogger(__name__)
+
 
 class AppLogger:
 
-    # Enable logging
-    logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                        level=logging.INFO)
+    @staticmethod
+    def info(msg, *args, **kwargs):
+        logger.info(msg, args, kwargs)
 
-    logger = logging.getLogger(__name__)
+    @staticmethod
+    def debug(msg, *args, **kwargs):
+        logger.debug(msg, args, kwargs)
 
-    @classmethod
-    def info(cls, msg, *args, **kwargs):
-        cls.logger.info(msg, args, kwargs)
+    @staticmethod
+    def critical(msg, *args, **kwargs):
+        logger.critical(msg, args, kwargs)
 
-    @classmethod
-    def debug(cls, msg, *args, **kwargs):
-        cls.logger.debug(msg, args, kwargs)
+    @staticmethod
+    def error(msg, *args, **kwargs):
+        logger.info(msg, args, kwargs)
 
-    @classmethod
-    def critical(cls, msg, *args, **kwargs):
-        cls.logger.critical(msg, args, kwargs)
-
-    @classmethod
-    def error(cls, msg, *args, **kwargs):
-        cls.logger.info(msg, args, kwargs)
-
-    @classmethod
-    def exception(cls, msg, *args, **kwargs):
-        cls.logger.exception(msg, args, kwargs)
+    @staticmethod
+    def exception(msg, *args, **kwargs):
+        logger.exception(msg, args, kwargs)
