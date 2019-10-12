@@ -22,6 +22,13 @@ from modules.data.dao.train_dao import TrainDao
 from modules.utils.yaml_parser import Config
 
 import warnings
+import logging
+
+# Enable logging
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
+
+logger = logging.getLogger(__name__)
 
 warnings.filterwarnings('ignore')
 
@@ -35,9 +42,10 @@ class Processor:
     This also defines the language dictionary to be used for prediction models.
     """
 
-    def __init__(self, vector_type, model_type, train_file_location):
+    def __init__(self, vector_type, model_type, train_file_location, trained_classifier):
         # training file location
         self.train_file_location = train_file_location
+        self.trained_classifier = trained_classifier
 
         # language column to be used for dictionary of predictors
         self.col_lang = Config.get_config_val(key="df_columns", key_1depth="col_lang")
@@ -87,7 +95,7 @@ class Processor:
     def __read_train_data(self):
         # self.train_df = pd.read_csv(self.train_file_location)
         # This will read directly from mongoDB, instead of a flat-file csv.
-        self.train_df = train_dao.get_train_df()
+        self.train_df = train_dao.get_train_df(self.trained_classifier)
         return self.train_df
 
     """

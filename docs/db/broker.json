@@ -1,0 +1,2 @@
+{ "_id" : { "$oid" : "5d9e1f9d6ecaa9720db58964" }, "user_id" : { "$oid" : "5d9e190e6ecaa9720db58947" }, "broker_name" : "Bank App", "default_lang" : "en-US" }
+{ "_id" : { "$oid" : "5da03c0550bc772f1f4720e4" }, "user_id" : { "$oid" : "5d9e190e6ecaa9720db58947" }, "broker_name" : "HR App", "default_lang" : "en-US" }

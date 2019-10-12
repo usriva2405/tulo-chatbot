@@ -1,8 +1,28 @@
 import random
+import re
+import uuid
+
+# a regular expression for validating an Email
+regex = '^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
 
 
-"""
-:return: get random number between 0 and upper range
-"""
-def get_random_number(upper_range):
-    return int(random.randint(0, upper_range))
+class UtilityFunctions:
+
+    @staticmethod
+    def is_email_valid(email):
+        if re.search(regex, email):
+            return True
+        else:
+            return False
+
+    @staticmethod
+    def get_random_number(upper_range):
+        """
+        get random number between 0 and upper range
+        :return:
+        """
+        return int(random.randint(0, upper_range))
+
+    @staticmethod
+    def get_uuid():
+        return uuid.uuid1().__str__()

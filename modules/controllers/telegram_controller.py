@@ -8,12 +8,15 @@ from telegram import (ReplyKeyboardRemove)
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters,
                           ConversationHandler)
 from modules.services.chat_service import ChatService
-from modules.utils.app_logger import AppLogger
+import logging
 
+# Enable logging
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
+
+logger = logging.getLogger(__name__)
 
 sys.path.insert(0, os.path.abspath('..'))
-
-logger = AppLogger()
 bankchat_app = ChatService()
 
 QUERY, CANCEL = range(2)

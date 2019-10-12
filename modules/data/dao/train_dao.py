@@ -8,11 +8,15 @@ Created on Sun Sep 22 22:26:19 2019
 
 import pandas as pd
 import json
-from modules.data.db_model.model import Train, Response, Variables, Circumstance
+from modules.data.db_model.model import *
 from modules.utils.yaml_parser import Config
-from modules.utils.app_logger import AppLogger
+import logging
 
-logger = AppLogger()
+# Enable logging
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
+
+logger = logging.getLogger(__name__)
 
 
 class TrainDao:
@@ -26,7 +30,10 @@ class TrainDao:
         self.col_variables = Config.get_config_val(key="df_columns", key_1depth="col_variables")
         self.col_input_circumstance = Config.get_config_val(key="df_columns", key_1depth="col_input_circumstance")
         self.col_output_circumstance = Config.get_config_val(key="df_columns", key_1depth="col_output_circumstance")
-        self.train_file_location = Config.get_config_val(key="flatfile", key_1depth="location") + Config.get_config_val(key="flatfile", key_1depth="mongo_train_fileName")
+        self.train_file_location = Config.get_config_val(key="flatfile", key_1depth="location") + Config.get_config_val(
+            key="flatfile", key_1depth="mongo_train_fileName")
+
+        self.trained_classifier_obj = None
 
         self.train_list = []
         self.df_train_flatfile = pd.DataFrame()
@@ -38,7 +45,10 @@ class TrainDao:
     This method returns dataframe, and does not save it as csv.
     #TODO add user configuration
     """
-    def get_train_df(self):
+
+    def get_train_df(self, trained_classifier):
+
+        self.trained_classifier_obj = trained_classifier
         self.__load_train_data()
         if self.train_list is not None:
             self.__create_flatfile()
@@ -57,41 +67,43 @@ class TrainDao:
     '''
     This will load training data from mongodb
     '''
+
     def __load_train_data(self):
-        self.train_list = Train.objects()
+        self.train_list = Train.objects(trained_classifier__all=[self.trained_classifier_obj])
 
     '''
     This is to create the flat file for training.
     '''
-    def __create_flatfile(self):
-        if (self.train_list != None) and (len(self.train_list) > 0):
 
-            #iterate over each document in train_list
+    def __create_flatfile(self):
+        if (self.train_list is not None) and (len(self.train_list) > 0):
+
+            # iterate over each document in train_list
             for train_document in self.train_list:
 
-                #check if query is not null
-                if (train_document.training_queries != None) and (len(train_document.training_queries)>0):
+                # check if query is not null
+                if (train_document.training_queries is not None) and (len(train_document.training_queries) > 0):
 
                     row_list = []
-                    #populate query
+                    # populate query
                     for query in train_document.training_queries:
-                        #get response json
+                        # get response json
                         responseJson = json.loads(train_document.to_json()).get("response")
                         variablesJson = json.loads(train_document.to_json()).get("variables")
 
-                        #create dictionary to add to df
+                        # create dictionary to add to df
                         row_dict = {
-                            self.col_lang : train_document.lang,
-                            self.col_category : train_document.category,
-                            self.col_query : query,
-                            self.col_response : responseJson,
-                            self.col_input_circumstance : train_document.circumstance.input_circumstance,
-                            self.col_output_circumstance : train_document.circumstance.output_circumstance,
-                            self.col_variables : variablesJson
+                            self.col_lang: train_document.lang,
+                            self.col_category: train_document.category,
+                            self.col_query: query,
+                            self.col_response: responseJson,
+                            self.col_input_circumstance: train_document.circumstance.input_circumstance,
+                            self.col_output_circumstance: train_document.circumstance.output_circumstance,
+                            self.col_variables: variablesJson
                         }
 
                         self.df_train_flatfile = self.df_train_flatfile.append(row_dict, ignore_index=True)
-                else :
+                else:
                     logger.info("training queries is null/ 0")
 
         else:
@@ -102,47 +114,57 @@ class TrainDao:
     '''
     This saves the flat file to filesystem
     '''
-    def __save_flatfile(self):
-        self.df_train_flatfile.to_csv(self.train_file_location,index=False)
 
+    def __save_flatfile(self):
+        self.df_train_flatfile.to_csv(self.train_file_location, index=False)
 
     '''
     populate mongodb with raw data
     This method reads the old format of queries, and prepares documents to append to mongoDB
     '''
+
     def bulk_insert_documents(self):
-        #load the old file
-        old_train_file_location = Config.get_config_val(key="flatfile", key_1depth="location") + Config.get_config_val(key="flatfile", key_1depth="mongo_train_fileName")
+        # load the old file
+        old_train_file_location = Config.get_config_val(key="flatfile", key_1depth="location") + Config.get_config_val(
+            key="flatfile", key_1depth="mongo_train_fileName")
         consumer_ques = pd.read_csv(old_train_file_location)
 
-        #first change the column names
-        consumer_ques.rename(columns={'question-category':Config.get_config_val(key="df_columns", key_1depth="col_category"), 'question':Config.get_config_val(key="df_columns", key_1depth="col_query"), 'answer':Config.get_config_val(key="df_columns", key_1depth="col_response")}, inplace=True)
+        # first change the column names
+        consumer_ques.rename(
+            columns={'question-category': Config.get_config_val(key="df_columns", key_1depth="col_category"),
+                     'question': Config.get_config_val(key="df_columns", key_1depth="col_query"),
+                     'answer': Config.get_config_val(key="df_columns", key_1depth="col_response")}, inplace=True)
 
-        #in order to create 1 row per category, we will have to split data based on every category.
-        #1. extract unique categories in data
+        # in order to create 1 row per category, we will have to split data based on every category.
+        # 1. extract unique categories in data
         categories = consumer_ques[Config.get_config_val(key="df_columns", key_1depth="col_category")].unique()
 
-        #2. iterate over each category
+        # 2. iterate over each category
         for cat in categories:
             print('category : {0}'.format(cat))
             trainObj = None
 
-            #3. split data per category
+            # 3. split data per category
             df = consumer_ques[consumer_ques[Config.get_config_val(key="df_columns", key_1depth="col_category")] == cat]
 
-            #4. extract query
-            training_queries = df[[Config.get_config_val(key="df_columns", key_1depth="col_query")]].values.T.tolist()[0]
+            # 4. extract query
+            training_queries = df[[Config.get_config_val(key="df_columns", key_1depth="col_query")]].values.T.tolist()[
+                0]
 
-            #4.1 extract language
+            # 4.1 extract language
             lang = df[Config.get_config_val(key="df_columns", key_1depth="col_lang")].unique()[0]
 
-            #4.2 extract category - category is already extracted in "cat"
+            # 4.2 extract category - category is already extracted in "cat"
 
-            #5. create train object
+            # 5. create train object
             trainObj = Train(category=cat, lang=lang, training_queries=training_queries)
 
-            #6. create circumstance
-            circumstance = Circumstance(input_circumstance = df[Config.get_config_val(key="df_columns", key_1depth="col_input_circumstance")].unique()[0], output_circumstance = df[Config.get_config_val(key="df_columns", key_1depth="col_output_circumstance")].unique()[0])
+            # 6. create circumstance
+            circumstance = Circumstance(input_circumstance=df[
+                Config.get_config_val(key="df_columns", key_1depth="col_input_circumstance")].unique()[0],
+                                        output_circumstance=df[Config.get_config_val(key="df_columns",
+                                                                                     key_1depth="col_output_circumstance")].unique()[
+                                            0])
             # circumstance = {
             #     'input_circumstance' : df['input_circumstance'].unique()[0],
             #     'output_circumstance' : df['output_circumstance'].unique()[0]
@@ -150,11 +172,11 @@ class TrainDao:
 
             trainObj.circumstance = circumstance
 
-            #7. create response
+            # 7. create response
             responseList = []
             textList = []
             textList.append(df[Config.get_config_val(key="df_columns", key_1depth="col_response")].unique()[0])
-            response = Response(text=textList, custom = '')
+            response = Response(text=textList, custom='')
             # responseObj = {
             #     'text' : textList,
             #     'custom' : ''
@@ -162,12 +184,13 @@ class TrainDao:
             # responseList.append(responseObj)
             trainObj.response.append(response)
 
-            #8. create variables
+            # 8. create variables
 
             variables = json.loads(df[Config.get_config_val(key="df_columns", key_1depth="col_variables")].unique()[0])
             for var in variables:
-                varObj = Variables(name=var.get('name'), type=var.get('type'), value=var.get('value'), io_type=var.get('io_type'))
+                varObj = Variables(name=var.get('name'), type=var.get('type'), value=var.get('value'),
+                                   io_type=var.get('io_type'))
                 trainObj.variables.append(varObj)
 
-            #9. save the object
+            # 9. save the object
             trainObj.save()

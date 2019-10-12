@@ -21,12 +21,16 @@ Created on Sun Sep 15 10:56:19 2019
 from modules.nlp_engine.model_builder.processor import Processor
 from modules.nlp_engine.vector_selection.vector_type import VectorType
 from modules.nlp_engine.model_selection.model_type import ModelType
+from modules.data.dao.trained_classifier_dao import Trainedclassifier
 from modules.utils.yaml_parser import Config
 import pickle
-from modules.utils.app_logger import AppLogger
+import logging
 
-logger = AppLogger()
+# Enable logging
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
 
+logger = logging.getLogger(__name__)
 
 class Trainer:
 
@@ -34,19 +38,20 @@ class Trainer:
         self.train_file_location = Config.get_config_val(key="flatfile", key_1depth="location") + Config.get_config_val(key="flatfile", key_1depth="mongo_train_fileName")
         self.filename = Config.get_config_val(key="model", key_1depth="file", key_2depth="location") + Config.get_config_val(key="model", key_1depth="file", key_2depth="response_classifier")
 
-    def setup_model_weights(self):
+    def setup_model_weights(self, trained_classifier):
         """
         trains the model and saves it
         :return: None
         """
         # training file location
-        logger.info("initiating re-training")
-        processor = Processor(VectorType.TFIDF, ModelType.LOGISTIC, self.train_file_location)
+
+        processor = Processor(VectorType.TFIDF, ModelType.LOGISTIC, self.train_file_location, trained_classifier)
         # setup training data
         processor.setup_train_data()
         response_classifier = processor.fit_train_test(True, 0.18)
 
         # save the model
-        pickle.dump(response_classifier, open(self.filename, 'wb'))
 
+        trained_classifier_obj = pickle.dumps(response_classifier)
         logger.info("re-training complete. Saved to file : {0}".format(self.filename))
+        return trained_classifier_obj
