@@ -39,10 +39,11 @@ def query():
     data = request.get_json()
     # fetch request objects
     inquiry = data['query']
+    token = data['token']
     lang = data['lang']
-    user_email = data['email']
+    broker_id = data['broker_id']
 
-    answer = chatService.predict_response(lang, inquiry)
+    answer = chatService.predict_response(token, broker_id, lang, inquiry)
 
     logger.info('************************')
     logger.info('Prediction given by model')

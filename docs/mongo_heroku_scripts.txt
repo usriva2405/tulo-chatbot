@@ -4,7 +4,7 @@ mongorestore -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -c train -u heroku_2r
 Export database
 mongodump -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -u <user> -p <password> -o <output directory>
 Import collection
-mongorestore -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -u <user> -p <password> <input .bson file>
+mongorestore -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -c train -u heroku_2r6cnrs1 -p os02s46gjpp2b0mio9qa4o3g8g <input .bson file>
 Export collection
 mongodump -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -c <collection> -u <user> -p <password> -o <output directory>
 

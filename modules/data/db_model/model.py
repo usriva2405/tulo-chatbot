@@ -33,12 +33,12 @@ class Broker(Document):
 # User (1) : Broker (n)
 # Broker (1) : Language (n) : TrainedClassifier(1)
 # So every user can create multiple brokers, each broker may have multiple classifiers, (1 per language)
-class TrainedClassifier(Document):
-    user_id = ReferenceField(User)  # denormalized for easier usage. Otherwise not required
-    broker_id = ReferenceField(Broker)
+class Trainedclassifier(Document):
+    user = ReferenceField(User)  # denormalized for easier usage. Otherwise not required
+    broker = ReferenceField(Broker)
     model_type = StringField(max_length=100)
     vector_type = StringField(max_length=100)
-    classifier = FileField()
+    classifier = BinaryField()
     lang = StringField(required=True, max_length=8)    # TODO replace with Language
 
 
@@ -61,8 +61,7 @@ class Response(EmbeddedDocument):
 
 # This is the final class
 class Train(Document):
-    user_id = ReferenceField(User)  # denormalized for easier usage. Otherwise not required
-    broker_id = ReferenceField(Broker)
+    trained_classifier = ReferenceField(Trainedclassifier)
     lang = StringField(required=True)    # TODO replace with Language
     category = StringField(required=True)
     circumstance = EmbeddedDocumentField('Circumstance')

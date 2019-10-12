@@ -43,12 +43,17 @@ class TrainingService:
                     logger.info(model_type)
                     logger.info(vector_type)
 
-                    trained_classifier = TrainedClassifierDao.get_classifier(user=user, broker=broker, model_type=model_type, vector_type=vector_type, lang=lang)
+                    trained_classifier = TrainedClassifierDao.get_trained_classifier(user=user, broker=broker, model_type=model_type, vector_type=vector_type, lang=lang)
 
                     if trained_classifier is not None:
-                        logger.info(trained_classifier)
-                        cls.trainer.setup_model_weights(trained_classifier)
+                        trained_classifier_obj = cls.trainer.setup_model_weights(trained_classifier)
+
+                        # save the pickled object to db
+                        TrainedClassifierDao.save_classifier(user=user, broker=broker, model_type=model_type, vector_type=vector_type, lang=lang, classifier=trained_classifier_obj)
                         response = "Successfully re-trained"
+
+                        # test if it was saved properly
+                        cls.test_trainer(user=user, broker=broker, model_type=model_type, vector_type=vector_type, lang=lang)
                     else:
                         logger.info("could not find trained_classifier")
                         response = "could not find trained_classifier"
@@ -63,3 +68,12 @@ class TrainingService:
             logger.error("error : {0}".format(e))
             response = "Error occurred"
         return response
+
+
+    @classmethod
+    def test_trainer(cls, user, broker, model_type, vector_type, lang):
+        logger.info("inside test_trainer")
+        classifier = TrainedClassifierDao.get_trained_classifier_obj_from_db(user=user, broker=broker, model_type=model_type, vector_type=vector_type, lang=lang)
+        logger.warning(classifier)
+
+        logger.info(classifier.predict(lang, "Hi"))

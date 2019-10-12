@@ -33,6 +33,8 @@ class TrainDao:
         self.train_file_location = Config.get_config_val(key="flatfile", key_1depth="location") + Config.get_config_val(
             key="flatfile", key_1depth="mongo_train_fileName")
 
+        self.trained_classifier_obj = None
+
         self.train_list = []
         self.df_train_flatfile = pd.DataFrame()
         # setup everything
@@ -45,7 +47,9 @@ class TrainDao:
     """
 
     def get_train_df(self, trained_classifier):
-        self.__load_train_data(trained_classifier)
+
+        self.trained_classifier_obj = trained_classifier
+        self.__load_train_data()
         if self.train_list is not None:
             self.__create_flatfile()
         else:
@@ -64,8 +68,8 @@ class TrainDao:
     This will load training data from mongodb
     '''
 
-    def __load_train_data(self, trained_classifier):
-        self.train_list = Train.objects(trained_classifier__all=[trained_classifier])
+    def __load_train_data(self):
+        self.train_list = Train.objects(trained_classifier__all=[self.trained_classifier_obj])
 
     '''
     This is to create the flat file for training.
