@@ -1,5 +1,5 @@
 # setup database
-use tulo_train
+use tulo_bot
 
 # setting up collection
 db.createCollection("train")
@@ -19,10 +19,17 @@ mongoexport -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -c train -u heroku_2r6
 db.train.update({"category" : "introduction"}, {$set : {"response.0.text": [ "Hi! How can I help you with your account?", "Hey there! tell me!", "How can I help?" ]}})
 
 
+# heroku add mongolab
 heroku addons:create mongolab
 heroku addons:docs mongolab
 heroku config:get MONGODB_URI
 heroku addons:open mongolab
+
+
+# heroku add redis free tier
+heroku addons:create heroku-redis:hobby-dev
+heroku addons:docs heroku-redis
+
 
 # mongo URI and credentials
 mongodb://heroku_2r6cnrs1:os02s46gjpp2b0mio9qa4o3g8g@ds229078.mlab.com:29078/heroku_2r6cnrs1

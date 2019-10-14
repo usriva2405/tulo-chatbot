@@ -19,8 +19,13 @@ DEV:
     location: modules/data/
     mongo_train_fileName: train.csv
   cache:
+    redis_url: redis://127.0.0.1:6379
+    redis_host: 127.0.0.1
+    redis_user: ""
+    redis_port: 6379
+    redis_password: ""
     ttl: 180
-    max_size: 1000
+    max_size: 10000
   model:
     file:
       location: modules/saved_models/
@@ -51,8 +56,13 @@ PROD:
     location: modules/data/
     mongo_train_fileName: train.csv
   cache:
+    redis_url: redis://h:p5c7f90b9d1b59e8b344f56c66fd89ad90bfc02e55d181f53386f01a096c7bed7@ec2-3-225-205-83.compute-1.amazonaws.com:18209
+    redis_host: ec2-3-225-205-83.compute-1.amazonaws.com
+    redis_user: h
+    redis_port: 18209
+    redis_password: p5c7f90b9d1b59e8b344f56c66fd89ad90bfc02e55d181f53386f01a096c7bed7
     ttl: 180
-    max_size: 1000
+    max_size: 10000
   model:
     file:
       location: modules/saved_models/
