@@ -40,7 +40,7 @@ DEV:
 
 PROD:
   mongodb:
-    url: mongodb://heroku_2r6cnrs1:os02s46gjpp2b0mio9qa4o3g8g@ds229078.mlab.com:29078/heroku_2r6cnrs1
+    url: mongodb://heroku_2r6cnrs1:os02s46gjpp2b0mio9qa4o3g8g@ds229078.mlab.com:29078/heroku_2r6cnrs1?retryWrites=false
     db: heroku_2r6cnrs1
   namespace:
     dns: https://bankbot-app.herokuapp.com
