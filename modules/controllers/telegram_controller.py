@@ -8,6 +8,8 @@ from telegram import (ReplyKeyboardRemove)
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters,
                           ConversationHandler)
 from modules.services.chat_service import ChatService
+from modules.services.auth_service import AuthService
+from modules.data.dto.telegram_query_response import TelegramQueryResponse
 import logging
 
 # Enable logging
@@ -18,6 +20,7 @@ logger = logging.getLogger(__name__)
 
 sys.path.insert(0, os.path.abspath('..'))
 bankchat_app = ChatService()
+authService = AuthService()
 
 QUERY, CANCEL = range(2)
 
@@ -48,15 +51,22 @@ def __closing_statement(text):
 def query(update, context):
     user = update.message.from_user
     text = update.message.text
+
+    # setup user login and fetch a token for default user
+    response_json = authService.authenticate_user(email="utkarshsrivastava.aiml@gmail.com",
+                                                  password="password1").toJSON()
+    token = json.loads(response_json).get("token")
+    broker_id = "5d9e1f9d6ecaa9720db58964"
+
     if __closing_statement(text):
         logger.info("closing_statement = true %s: %s", user.first_name, update.message.text)
         # answer, answer_cat, question_cat = bankchat_app.predict_answer(text)
-        answer = bankchat_app.predict_response("en-US", text)
-        update.message.reply_text(answer)
+        answer = bankchat_app.predict_response(token=token, broker_id=broker_id, lang="en-US", query=text)
+        update.message.reply_text(TelegramQueryResponse.extract_response(answer))
         return CANCEL
     else:
         # predict response
-        answer = bankchat_app.predict_response("en-US", text)
+        answer = bankchat_app.predict_response(token=token, broker_id=broker_id, lang="en-US", query=text)
         logger.info('************************')
         logger.info('Prediction given by model')
         logger.info('************************')
@@ -65,8 +75,7 @@ def query(update, context):
         # response = answer + '\n\n Can I help you with anything else?'
 
         logger.info("Query %s: %s", user.first_name, update.message.text)
-
-        update.message.reply_text(extract_response(answer))
+        update.message.reply_text(TelegramQueryResponse.extract_response(answer))
 
         return QUERY
 
