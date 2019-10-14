@@ -9,7 +9,10 @@ mongoimport --db tulo_bot --collection train --file train.json
 mongoimport --db tulo_bot --collection user --file user.json
 mongoimport --db tulo_bot --collection broker --file broker.json
 mongoimport --db tulo_bot --collection trainedclassifier --file train.json
-mongoimport -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -c train -u heroku_2r6cnrs1 -p os02s46gjpp2b0mio9qa4o3g8g --file train.json
+mongoimport -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -u heroku_2r6cnrs1 -p os02s46gjpp2b0mio9qa4o3g8g -c train --file train.json
+mongoimport -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -u heroku_2r6cnrs1 -p os02s46gjpp2b0mio9qa4o3g8g -c user --file user.json
+mongoimport -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -u heroku_2r6cnrs1 -p os02s46gjpp2b0mio9qa4o3g8g -c broker --file broker.json
+mongoimport -h ds229078.mlab.com:29078 -d heroku_2r6cnrs1 -u heroku_2r6cnrs1 -p os02s46gjpp2b0mio9qa4o3g8g -c trainedclassifier --file trainedclassifier.json
 
 # export database
 mongoexport --db tulo_bot -c train --out train.json
@@ -30,14 +33,6 @@ heroku addons:open mongolab
 heroku addons:create heroku-redis:hobby-dev
 heroku addons:docs heroku-redis
 
-
-# mongo URI and credentials
-mongodb://heroku_2r6cnrs1:os02s46gjpp2b0mio9qa4o3g8g@ds229078.mlab.com:29078/heroku_2r6cnrs1
-user : heroku_2r6cnrs1
-password : os02s46gjpp2b0mio9qa4o3g8g
-host : ds229078.mlab.com
-port : 29078
-dbname : heroku_2r6cnrs1
 
 # connect via mongo shell
 mongo ds229078.mlab.com:29078/heroku_2r6cnrs1 -u heroku_2r6cnrs1 -p os02s46gjpp2b0mio9qa4o3g8g
