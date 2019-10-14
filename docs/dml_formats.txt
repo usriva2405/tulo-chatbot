@@ -34,6 +34,11 @@ heroku addons:create heroku-redis:hobby-dev
 heroku addons:docs heroku-redis
 
 
+# new relic setup
+heroku addons:create newrelic:wayne
+heroku addons:docs newrelic
+
+
 # connect via mongo shell
 mongo ds229078.mlab.com:29078/heroku_2r6cnrs1 -u heroku_2r6cnrs1 -p os02s46gjpp2b0mio9qa4o3g8g
 

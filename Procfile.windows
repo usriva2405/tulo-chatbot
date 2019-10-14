@@ -1,1 +1,1 @@
-web: python modules.controllers.flask_controller.py runserver 0.0.0.0:5000
+web: NEW_RELIC_CONFIG_FILE=newrelic.ini newrelic-admin run-program python modules.controllers.flask_controller.py runserver 0.0.0.0:5000
