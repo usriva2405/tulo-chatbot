@@ -76,4 +76,4 @@ class TrainingService:
         classifier_instance = TrainedClassifierDao.get_trained_classifier_obj_from_db(user=user, broker=broker, model_type=model_type, vector_type=vector_type, lang=lang)
         logger.warning(classifier_instance)
 
-        logger.info(classifier_instance.predict(lang, "Hi"))
+        logger.info(classifier_instance.predict(user=user, broker=broker, model_type=model_type, vector_type=vector_type, lang=lang, query="hi"))
