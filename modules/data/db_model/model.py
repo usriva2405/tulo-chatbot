@@ -1,6 +1,7 @@
 from mongoengine import *
 from modules.utils.yaml_parser import Config
 import json
+from datetime import datetime
 
 url = Config.get_config_val(key="mongodb", key_1depth="url")
 db = Config.get_config_val(key="mongodb", key_1depth="db")
@@ -76,8 +77,9 @@ class Train(Document):
 
 class Unclassifiedquery(Document):
     trained_classifier = ReferenceField(Trainedclassifier, required=True)       # This is the classifier against which this query was raised
-    created_on = DateTimeField(required=True)                                   # created on which date
+    created_on = DateTimeField(required=True, default=datetime.now())           # created on which date
     query = StringField(required=True, max_length=300)                          # what was the query
-    is_trained = BooleanField(required=False)                                   # whether the user has trained it or not
+    is_trained = BooleanField(required=True, default=False)                     # whether the user has trained it or not
     trained_on = DateTimeField(required=False)                                  # which date was it trained on
-    train_category = ReferenceField(Train, required=False)                               # which category does it belong to after training
+    train_category = ReferenceField(Train, required=False)                      # which category does it belong to after training
+    is_discardable = BooleanField(required=True, default=False)                 # whether the data is junk or can be trained

@@ -35,7 +35,7 @@ class UnclassifiedQueryDao:
         response = None
         if trained_classifier is not None:
             if query is not None:
-                unclassified_query = Unclassifiedquery(trained_classifier=trained_classifier, created_on=datetime.now(), query=query, is_trained=False, trained_on=None, train_category=None)
+                unclassified_query = Unclassifiedquery(trained_classifier=trained_classifier, created_on=datetime.now(), query=query, is_trained=False, trained_on=None, train_category=None, is_discardable=True)
                 unclassified_query.save()
                 response = BaseResponse(code=200, reason="successfully saved")
             else:
