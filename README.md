@@ -117,11 +117,11 @@ body :
 REQUEST
 URL : /logout
 body :
-`
+```
 {
 	"token": "<<use token generated from login here>>"
 }
-`
+```
 
 
 For more details refer to (https://github.com/usriva2405/tulo-chatbot/wiki)
