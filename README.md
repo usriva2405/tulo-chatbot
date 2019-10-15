@@ -12,12 +12,13 @@ This bot is a ML (machine learning) based intent (category) specific conversatio
 10. Out of box deployment ready on Heroku (More on this later)
 11. Extend model selection and vector selection to custom implementation
 
-In Pipeline (major upgrades)
+In Pipeline (major upgrades) **(Star it, watch it, contribute actively to it!)**
 1. Each user account can support bots in multiple projects, each in multiple languages.
 2. Will Support (in the pipeline) follow up queries, custom variables in input and output.
 3. Small talk support (was part of version 1, but upon re-designing, this feature broke). Move to Spacy for small talk
 4. Improve classification accuracy by using normalizer (for spelling mistakes), NLTK for preprocessing, Lemmatization and stemming
 5. Add GUI for improved user experience (will mostly be a separate project)
+6. Other recommendations about project structure, deployment best practices etc...
 
 ## Tech/ Infra Stack
 Python 3.6+<br/>
@@ -76,7 +77,7 @@ modules
 ## APIs
 
 ### AUTHENTICATION
-REQUEST<br/>
+**REQUEST**<br/>
 URL : /authenticate<br/>
 body :<br/>
 ```
@@ -89,7 +90,7 @@ RESPONSE<br/>
 returns list of brokers (id + default language) available and a auth token
 
 ### RETRAIN
-REQUEST<br/>
+**REQUEST**<br/>
 URL : /retrain<br/>
 body :<br/>
 ```
@@ -101,7 +102,7 @@ body :<br/>
 ```
 
 ### QUERY
-REQUEST<br/>
+**REQUEST**<br/>
 URL : /query<br/>
 body :<br/>
 ```
@@ -114,7 +115,7 @@ body :<br/>
 ```
 
 ### LOGOUT
-REQUEST<br/>
+**REQUEST**<br/>
 URL : /logout<br/>
 body :<br/>
 ```
