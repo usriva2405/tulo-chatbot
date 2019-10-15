@@ -76,22 +76,22 @@ modules
 ## APIs
 
 ### AUTHENTICATION
-REQUEST
-URL : /authenticate
-body :
+REQUEST<br/>
+URL : /authenticate<br/>
+body :<br/>
 ```
 {
 	"email" : "utkarshsrivastava.aiml@gmail.com",
 	"password" : "password1"
 }
 ```
-RESPONSE
+RESPONSE<br/>
 returns list of brokers (id + default language) available and a auth token
 
 ### RETRAIN
-REQUEST
-URL : /retrain
-body :
+REQUEST<br/>
+URL : /retrain<br/>
+body :<br/>
 ```
 {
 	"token": "<<use token generated from login here>>",
@@ -101,9 +101,9 @@ body :
 ```
 
 ### QUERY
-REQUEST
-URL : /query
-body :
+REQUEST<br/>
+URL : /query<br/>
+body :<br/>
 ```
 {
 	"token": "<<use token generated from login here>>",
@@ -114,9 +114,9 @@ body :
 ```
 
 ### LOGOUT
-REQUEST
-URL : /logout
-body :
+REQUEST<br/>
+URL : /logout<br/>
+body :<br/>
 ```
 {
 	"token": "<<use token generated from login here>>"
