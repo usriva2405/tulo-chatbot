@@ -79,12 +79,12 @@ modules
 REQUEST
 URL : /authenticate
 body :
-`
+```
 {
 	"email" : "utkarshsrivastava.aiml@gmail.com",
 	"password" : "password1"
 }
-`
+```
 RESPONSE
 returns list of brokers (id + default language) available and a auth token
 
@@ -92,26 +92,26 @@ returns list of brokers (id + default language) available and a auth token
 REQUEST
 URL : /retrain
 body :
-`
+```
 {
 	"token": "<<use token generated from login here>>",
 	"broker_id" : "5d9e1f9d6ecaa9720db58964",
  	"lang" : "en-US"
 }
-`
+```
 
 ### QUERY
 REQUEST
 URL : /query
 body :
-`
+```
 {
 	"token": "<<use token generated from login here>>",
 	"broker_id" : "5d9e1f9d6ecaa9720db58964",
 	"lang" : "en-US",
 	"query" : "Can you show my balance?"
 }
-`
+```
 
 ### LOGOUT
 REQUEST
