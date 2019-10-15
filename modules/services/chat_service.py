@@ -46,12 +46,13 @@ class ChatService:
                     logger.info(model_type)
                     logger.info(vector_type)
 
-                    predictor = TrainedClassifierDao.get_trained_classifier_obj_from_db(user=user, broker=broker,
-                                                                                        model_type=model_type,
-                                                                                        vector_type=vector_type,
-                                                                                        lang=lang)
-                    if predictor is not None:
-                        response = predictor.predict(lang, query)
+                    classifier_instance = TrainedClassifierDao.get_trained_classifier_obj_from_db(user=user,
+                                                                                                  broker=broker,
+                                                                                                  model_type=model_type,
+                                                                                                  vector_type=vector_type,
+                                                                                                  lang=lang)
+                    if classifier_instance is not None:
+                        response = classifier_instance.predict(user=user, broker=broker, model_type=model_type, vector_type=vector_type, lang=lang, query=query)
                     else:
                         response = "could not find trained_classifier"
                 else:

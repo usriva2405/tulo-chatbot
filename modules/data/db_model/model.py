@@ -72,3 +72,12 @@ class Train(Document):
     def toJSON(self):
         return json.dumps(self, default=lambda o: o.__dict__,
                           sort_keys=True, indent=4)
+
+
+class Unclassifiedquery(Document):
+    trained_classifier = ReferenceField(Trainedclassifier, required=True)       # This is the classifier against which this query was raised
+    created_on = DateTimeField(required=True)                                   # created on which date
+    query = StringField(required=True, max_length=300)                          # what was the query
+    is_trained = BooleanField(required=False)                                   # whether the user has trained it or not
+    trained_on = DateTimeField(required=False)                                  # which date was it trained on
+    train_category = ReferenceField(Train, required=False)                               # which category does it belong to after training

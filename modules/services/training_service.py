@@ -73,7 +73,7 @@ class TrainingService:
     @classmethod
     def test_trainer(cls, user, broker, model_type, vector_type, lang):
         logger.info("inside test_trainer")
-        classifier = TrainedClassifierDao.get_trained_classifier_obj_from_db(user=user, broker=broker, model_type=model_type, vector_type=vector_type, lang=lang)
-        logger.warning(classifier)
+        classifier_instance = TrainedClassifierDao.get_trained_classifier_obj_from_db(user=user, broker=broker, model_type=model_type, vector_type=vector_type, lang=lang)
+        logger.warning(classifier_instance)
 
-        logger.info(classifier.predict(lang, "Hi"))
+        logger.info(classifier_instance.predict(lang, "Hi"))
