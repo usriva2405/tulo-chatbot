@@ -20,10 +20,10 @@ In Pipeline (major upgrades)
 5. Add GUI for improved user experience (will mostly be a separate project)
 
 ## Tech/ Infra Stack
-Python 3.6+
-MongoDB
-Heroku (for deployment)
-Redis (for decentralized caching)
+Python 3.6+<br/>
+MongoDB<br/>
+Heroku (for deployment)<br/>
+Redis (for decentralized caching)<br/>
 
 ## Actors and Systems
 
