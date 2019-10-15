@@ -72,3 +72,16 @@ class Train(Document):
     def toJSON(self):
         return json.dumps(self, default=lambda o: o.__dict__,
                           sort_keys=True, indent=4)
+
+
+class Unclassifiedqueries(Document):
+    created_on = DateTimeField(required=True)
+    query = StringField(required=True, max_length=300)
+    is_trained = BooleanField(required=False)
+    trained_on = DateTimeField(required=False)
+    category = StringField(required=False)
+    trained_classifier = ReferenceField(Trainedclassifier)
+    response = ListField(EmbeddedDocumentField('Response'))
+    variables = ListField(EmbeddedDocumentField('Variables'))
+
+
