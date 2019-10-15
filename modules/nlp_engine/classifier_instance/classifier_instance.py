@@ -14,6 +14,8 @@ import json
 
 # Setup Logging
 from modules.utils.utility_functions import UtilityFunctions
+from modules.data.dao.trained_classifier_dao import TrainedClassifierDao
+from modules.data.dao.unclassified_query_dao import UnclassifiedQueryDao
 from modules.utils.yaml_parser import Config
 import logging
 
@@ -234,9 +236,13 @@ class ClassifierInstance:
         X_vect = self.vector.transform(data)
         return X_vect
 
-    def predict(self, lang, query):
+    def predict(self, user, broker, model_type, vector_type, lang, query):
         """
-        prediction function.
+        prediction function
+        :param user:
+        :param broker:
+        :param model_type:
+        :param vector_type:
         :param lang:
         :param query:
         :return:
@@ -253,38 +259,18 @@ class ClassifierInstance:
             if np.amax(self.model.decision_function(X_pred)) < self.decision_boundary:
                 numeric_category = -1
                 # At this point of time, bot should save the question
-
+                logger.info("could not classify the query. saving it to unclassified query")
+                trained_classifier = TrainedClassifierDao.get_trained_classifier(user=user, broker=broker,
+                                                                                 model_type=model_type,
+                                                                                 vector_type=vector_type,
+                                                                                 lang=lang)
+                response = UnclassifiedQueryDao.save_unclassified_query(trained_classifier=trained_classifier, query=query)
+                logger.info(response)
             else:
                 numeric_category = y_pred[0]
         else:
             numeric_category = y_pred[0]
 
         response = self.query_response(lang, numeric_category)
-
-        return response
-
-    def predict_category(self, lang, query):
-        """
-        Only returns the predicted category
-        :param lang:
-        :param query:
-        :return:
-        """
-        X_pred = self.__vectorize_data([query])
-        y_pred = self.model.predict(X_pred)
-
-        """
-        if the function requires a decision boundary, then use the given boundary, else let prediction return a reaction
-        """
-        if self.use_decision_function:
-            if np.amax(self.model.decision_function(X_pred)) < self.decision_boundary:
-                numeric_category = -1
-                response = numeric_category
-                # At this point of time, bot should save the question
-
-            else:
-                response = y_pred[0]
-        else:
-            response = y_pred[0]
 
         return response

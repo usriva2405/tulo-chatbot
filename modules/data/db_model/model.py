@@ -74,14 +74,10 @@ class Train(Document):
                           sort_keys=True, indent=4)
 
 
-class Unclassifiedqueries(Document):
-    created_on = DateTimeField(required=True)
-    query = StringField(required=True, max_length=300)
-    is_trained = BooleanField(required=False)
-    trained_on = DateTimeField(required=False)
-    category = StringField(required=False)
-    trained_classifier = ReferenceField(Trainedclassifier)
-    response = ListField(EmbeddedDocumentField('Response'))
-    variables = ListField(EmbeddedDocumentField('Variables'))
-
-
+class Unclassifiedquery(Document):
+    trained_classifier = ReferenceField(Trainedclassifier, required=True)       # This is the classifier against which this query was raised
+    created_on = DateTimeField(required=True)                                   # created on which date
+    query = StringField(required=True, max_length=300)                          # what was the query
+    is_trained = BooleanField(required=False)                                   # whether the user has trained it or not
+    trained_on = DateTimeField(required=False)                                  # which date was it trained on
+    train_category = ReferenceField(Train, required=False)                               # which category does it belong to after training
