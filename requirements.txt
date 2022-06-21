@@ -36,7 +36,7 @@ networkx==2.3
 nltk==3.4.4
 numba==0.44.1
 numexpr==2.6.9
-numpy==1.16.4
+numpy==1.22.0
 numpydoc==0.9.1
 opencv-python==4.1.0.25
 openpyxl==2.6.2
